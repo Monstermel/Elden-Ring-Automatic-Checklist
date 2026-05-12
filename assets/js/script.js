@@ -43,20 +43,20 @@ fileSelector.addEventListener("change", (event) => {
   reader.readAsArrayBuffer(file);
 });
 
-function calculate(){
+function calculate() {
   let options = $("#slot_selector option:selected");
-      let selected_slot = options[0].value;
-      getJsonFiles();
-      result = getOwnedAndNot(file_read, selected_slot);
-      if (result["worked"]) {
-        $("#owned").load("page_parts.html #owned_section", () => {
-          $("#not-owned").load("page_parts.html #not-owned-section", () => {
-            document.getElementById("collapse_button1").style.display = "block";
-            document.getElementById("collapse_button2").style.display = "block";
-            addFraction();
-          });
-        });
-      }
+  let selected_slot = options[0].value;
+  getJsonFiles();
+  result = getOwnedAndNot(file_read, selected_slot);
+  if (result["worked"]) {
+    $("#owned").load("page_parts.html #owned_section", () => {
+      $("#not-owned").load("page_parts.html #not-owned-section", () => {
+        document.getElementById("collapse_button1").style.display = "block";
+        document.getElementById("collapse_button2").style.display = "block";
+        addFraction();
+      });
+    });
+  }
 }
 
 function fetchJson(url, callback) {
@@ -95,6 +95,11 @@ function getJsonFiles() {
         all_items.spiritAshes = { ...all_items.spiritAshes, ...data2.spiritAshes };
       });
     }
+
+    // Load bosses.json
+    fetchJson("assets/json/bosses.json", function (data_bosses) {
+      all_items.bosses = { ...data_bosses.bosses };
+    });
   });
 
   fetchJson("assets/json/item_dict_template.json", function (data) {
@@ -139,11 +144,109 @@ function buffer_equal(buf1, buf2) {
 function getInventory(slot) {
   index = subfinder(slot, pattern) + pattern.byteLength + 8
   if (!index) {
-      index = subfinder(slot, pattern_dlc) + pattern_dlc.byteLength + 3
-      isDlcFile = true
+    index = subfinder(slot, pattern_dlc) + pattern_dlc.byteLength + 3
+    isDlcFile = true
   }
   index1 = subfinder(slot.subarray(index, slot.byteLength), new Uint8Array(50).fill(0)) + index + 6;
   return slot.subarray(index, index1);
+}
+
+function getEventFlags(slot) {
+  let offset = 0;
+  const view = new DataView(slot.buffer, slot.byteOffset, slot.byteLength);
+
+  // 1. ver (u32) + map_id (4) + _0x18 (0x18)
+  offset += 4 + 4 + 0x18; // 32
+
+  // 2. ga_items: 0x1400 items, variable size each
+  for (let i = 0; i < 0x1400; i++) {
+    let item_id = view.getUint32(offset + 4, true);
+    offset += 8; // gaitem_handle + item_id
+    if (item_id !== 0 && (item_id & 0xf0000000) === 0) {
+      offset += 13; // unk2(4) + unk3(4) + aow_gaitem_handle(4) + unk5(1)
+    } else if (item_id !== 0 && (item_id & 0xf0000000) === 0x10000000) {
+      offset += 8; // unk2(4) + unk3(4)
+    }
+  }
+
+  // 3. PlayerGameData: 432 bytes
+  offset += 432;
+
+  // 4. _0xd0: 208 bytes
+  offset += 0xd0;
+
+  // 5. EquipData: 22 u32 fields = 88 bytes
+  offset += 88;
+
+  // 6. ChrAsm: 29 u32 fields = 116 bytes
+  offset += 116;
+
+  // 7. ChrAsm2: 22 u32 fields = 88 bytes
+  offset += 88;
+
+  // 8. EquipInventoryData(0xa80, 0x180):
+  //    common_count(4) + 0xa80 items * 12 + key_count(4) + 0x180 items * 12 + next_equip(4) + next_acq(4)
+  offset += 4 + (0xa80 * 12) + 4 + (0x180 * 12) + 4 + 4; // 37,520
+
+  // 9. EquipMagicData: 0xC spells * 8 + _0x10(16) + active_slot(4) = 116
+  offset += 116;
+
+  // 10. EquipItemData: 0xA quick_slots * 8 + active_slot(4) + 0x6 pouch * 8 + _0x8(8) = 140
+  offset += 140;
+
+  // 11. equip_gesture_data: 6 * i32 = 24
+  offset += 24;
+
+  // 12. EquipProjectileData: count(4) + count * 8
+  let projectile_count = view.getInt32(offset, true);
+  offset += 4 + projectile_count * 8;
+
+  // 13. EquippedItems: 39 u32 fields = 156
+  offset += 156;
+
+  // 14. EquipPhysicsData: 2 u32 = 8
+  offset += 8;
+
+  // 15. _0x4: u32 = 4
+  offset += 4;
+
+  // 16. _face_data: 0x12f = 303
+  offset += 0x12f;
+
+  // 17. EquipInventoryData(0x780, 0x80):
+  //    common_count(4) + 0x780 items * 12 + key_count(4) + 0x80 items * 12 + next_equip(4) + next_acq(4)
+  offset += 4 + (0x780 * 12) + 4 + (0x80 * 12) + 4 + 4; // 24,592
+
+  // 18. gesture_game_data: 0x40 * i32 = 256
+  offset += 256;
+
+  // 19. Regions: count(4) + count * u32
+  let regions_count = view.getUint32(offset, true);
+  offset += 4 + regions_count * 4;
+
+  // 20. RideGameData: 3 floats(12) + i32(4) + _0x10(16) + u32(4) + u32(4) = 40
+  offset += 40;
+
+  // 21. _0x1(1) + _0x40(64) + _0x4_1(4) + _0x4_2(4) + _0x4_3(4) = 77
+  offset += 77;
+
+  // 22. _menu_profile_save_load: 0x1008 = 4104
+  offset += 0x1008;
+
+  // 23. _trophy_equip_data: 0x34 = 52
+  offset += 0x34;
+
+  // 24. GaItemData: distinct_count(4) + unk1(4) + 0x1b58 items * 16 = 112,008
+  offset += 4 + 4 + (0x1b58 * 16);
+
+  // 25. _tutorial_data: 0x408 = 1032
+  offset += 0x408;
+
+  // 26. _0x1d: 29
+  offset += 0x1d;
+
+  // 27. Return event_flags subarray (0x1bf99f bytes)
+  return slot.subarray(offset, offset + 0x1bf99f);
 }
 
 function split(list_a, chunk_size) {
@@ -177,17 +280,35 @@ function decimalToHex(d, padding) {
 function getOwnedAndNot(file_read, selected_slot) {
   try {
     let saves_array = new Uint8Array(file_read);
-    let slots = get_slot_ls(saves_array);
-    let inventory = Array.from(getInventory(slots[selected_slot]));
+    let slot = get_slot_ls(saves_array)[selected_slot];
+    let inventory = Array.from(getInventory(slot));
+    let event_flags = getEventFlags(slot);
     let id_list = split(inventory, isDlcFile ? 8 : 16)
     id_list.forEach((raw_id, index) => (id_list[index] = getIdReversed(raw_id).toUpperCase()));
 
     let owned_items = JSON.parse(JSON.stringify(item_dict_template));
     let not_owned_items = JSON.parse(JSON.stringify(item_dict_template));
 
+    // Process Bosses
+    if (all_items.bosses) {
+      Object.keys(all_items.bosses).forEach((flag_id) => {
+        let boss = all_items.bosses[flag_id];
+        let byte = event_flags[boss.offset];
+        boss.killed = (byte & (1 << boss.bit)) !== 0;
+        if (boss.killed) {
+          owned_items["bosses"].push(boss.name);
+          item_counter["bosses"]["summary"]["owned"]++;
+        } else {
+
+          not_owned_items["bosses"].push(boss.name);
+          item_counter["bosses"]["summary"]["not-owned"]++;
+        }
+        item_counter["bosses"]["summary"]["total"]++;
+      });
+    }
+
     id_list.forEach((id) => {
       if (id in all_items["armament"]) {
-        console.log(id)
         owned_items["armament"][all_items["armament"][id]["class"]].push(all_items["armament"][id]["name"]);
         item_counter["armament"][all_items["armament"][id]["class"]]["owned"]++;
         item_counter["armament"][all_items["armament"][id]["class"]]["total"]++;
@@ -369,7 +490,7 @@ function nFormatter(num, digits) {
     { value: 1e18, symbol: "E" }
   ];
   const rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
-  var item = lookup.slice().reverse().find(function(item) {
+  var item = lookup.slice().reverse().find(function (item) {
     return num >= item.value;
   });
   return item ? (num / item.value).toFixed(digits).replace(rx, "$1") + item.symbol : "0";

@@ -62,6 +62,16 @@
     <h3>Spirit Ashes</h3>
   </button>
   <div class="container-fluid collapse" id="owned-spiritAshes"></div>
+  <button
+    class="btn btn-dark row button-collapse"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#owned-bosses"
+    onclick="getCategorySection('bosses', 'owned')"
+  >
+    <h3>Bosses</h3>
+  </button>
+  <div class="container-fluid collapse" id="owned-bosses"></div>
 </div>
 
 <div class="container" style="display: flex; flex-direction: column" id="not-owned-section">
@@ -128,4 +138,14 @@
     <h3>Spirit Ashes</h3>
   </button>
   <div class="container-fluid collapse" id="not-owned-spiritAshes"></div>
+  <button
+    class="btn btn-dark row button-collapse"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#not-owned-bosses"
+    onclick="getCategorySection('bosses', 'not-owned')"
+  >
+    <h3>Bosses</h3>
+  </button>
+  <div class="container-fluid collapse" id="not-owned-bosses"></div>
 </div>

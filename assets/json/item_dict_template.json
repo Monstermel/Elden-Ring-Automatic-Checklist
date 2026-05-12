@@ -42,11 +42,6 @@
     "Perfume Bottle": [],
     "Beast Claw": [],
     "Light Greatsword": []
-
-
-
-
-
   },
   "armor": {
     "Head": [],
@@ -74,5 +69,6 @@
     "Incantation": []
   },
   "spiritAshes": [],
-  "talisman": []
+  "talisman": [],
+  "bosses": []
 }
