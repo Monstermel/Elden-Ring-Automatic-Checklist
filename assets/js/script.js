@@ -70,8 +70,6 @@ function fetchJson(url, callback) {
   });
 }
 
-
-
 function getJsonFiles() {
   fetchJson("assets/json/all_items.json", function (data) {
     all_items = { ...data };
@@ -303,26 +301,29 @@ function getOwnedAndNot(file_read, selected_slot) {
     Object.keys(all_items.bosses).forEach((flag_id) => {
       let event_id = parseInt(flag_id);
       let block_id = Math.floor(event_id / 1000);
+
       let bst_val = eventflag_bst_map[block_id];
-
-      if (bst_val !== undefined) {
-        let block_offset = bst_val * 125 + Math.floor((event_id % 1000) / 8);
-        let bit_index = 7 - (event_id % 8);
-
-        let boss = all_items.bosses[flag_id];
-        let byte = event_flags[block_offset];
-        boss.killed = (byte & (1 << bit_index)) !== 0;
-        if (boss.killed) {
-          owned_items["bosses"].push(boss.name);
-          item_counter["bosses"]["summary"]["owned"]++;
-        } else {
-          not_owned_items["bosses"].push(boss.name);
-          item_counter["bosses"]["summary"]["not-owned"]++;
-        }
-        item_counter["bosses"]["summary"]["total"]++;
-      } else {
+      if (bst_val === undefined) {
         console.warn(`Missing BST entry for block_id: ${block_id} (event_id: ${event_id})`);
+        return;
       }
+
+      let block_offset = bst_val * 125 + Math.floor((event_id % 1000) / 8);
+      let bit_index = 7 - (event_id % 8);
+
+      let boss = all_items.bosses[flag_id];
+      let byte = event_flags[block_offset];
+
+      boss.killed = (byte & (1 << bit_index)) !== 0;
+      if (boss.killed) {
+        owned_items["bosses"].push(boss.name);
+        item_counter["bosses"]["summary"]["owned"]++;
+      } else {
+        not_owned_items["bosses"].push(boss.name);
+        item_counter["bosses"]["summary"]["not-owned"]++;
+      }
+
+      item_counter["bosses"]["summary"]["total"]++;
     });
 
 
