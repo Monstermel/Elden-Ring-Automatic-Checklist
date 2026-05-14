@@ -11,6 +11,8 @@ let result = { worked: false, owned: null, "not-owned": null, counter: null };
 var all_items = null;
 var item_counter = null;
 var item_dict_template = null;
+var eventflag_bst_map = null;
+
 
 fileSelector.addEventListener("change", (event) => {
   // no file selected to read
@@ -68,6 +70,15 @@ function fetchJson(url, callback) {
   });
 }
 
+function fetchText(url, callback) {
+  $.ajax({
+    url: url,
+    async: false,
+    dataType: "text",
+    success: callback,
+  });
+}
+
 function getJsonFiles() {
   fetchJson("assets/json/all_items.json", function (data) {
     all_items = { ...data };
@@ -109,6 +120,19 @@ function getJsonFiles() {
   fetchJson("assets/json/item_counter.json", function (data) {
     item_counter = { ...data };
   });
+
+  if (eventflag_bst_map === null) {
+    fetchText("assets/json/eventflag_bst.txt", function (data) {
+      eventflag_bst_map = {};
+      const lines = data.split(/\r?\n/);
+      lines.forEach(line => {
+        const parts = line.split(',');
+        if (parts.length === 2) {
+          eventflag_bst_map[parseInt(parts[0])] = parseInt(parts[1]);
+        }
+      });
+    });
+  }
 }
 
 function get_slot_ls(dat) {
@@ -279,6 +303,8 @@ function decimalToHex(d, padding) {
 
 function getOwnedAndNot(file_read, selected_slot) {
   try {
+    let names = getNames(file_read);
+    console.log(`Analyzing slot: ${selected_slot} (${names[selected_slot]})`);
     let saves_array = new Uint8Array(file_read);
     let slot = get_slot_ls(saves_array)[selected_slot];
     let inventory = Array.from(getInventory(slot));
@@ -290,22 +316,31 @@ function getOwnedAndNot(file_read, selected_slot) {
     let not_owned_items = JSON.parse(JSON.stringify(item_dict_template));
 
     // Process Bosses
-    if (all_items.bosses) {
-      Object.keys(all_items.bosses).forEach((flag_id) => {
+    Object.keys(all_items.bosses).forEach((flag_id) => {
+      let event_id = parseInt(flag_id);
+      let block_id = Math.floor(event_id / 1000);
+      let bst_val = eventflag_bst_map[block_id];
+
+      if (bst_val !== undefined) {
+        let block_offset = bst_val * 125 + Math.floor((event_id % 1000) / 8);
+        let bit_index = 7 - (event_id % 8);
+
         let boss = all_items.bosses[flag_id];
-        let byte = event_flags[boss.offset];
-        boss.killed = (byte & (1 << boss.bit)) !== 0;
+        let byte = event_flags[block_offset];
+        boss.killed = (byte & (1 << bit_index)) !== 0;
         if (boss.killed) {
           owned_items["bosses"].push(boss.name);
           item_counter["bosses"]["summary"]["owned"]++;
         } else {
-
           not_owned_items["bosses"].push(boss.name);
           item_counter["bosses"]["summary"]["not-owned"]++;
         }
         item_counter["bosses"]["summary"]["total"]++;
-      });
-    }
+      } else {
+        console.warn(`Missing BST entry for block_id: ${block_id} (event_id: ${event_id})`);
+      }
+    });
+
 
     id_list.forEach((id) => {
       if (id in all_items["armament"]) {
