@@ -70,14 +70,7 @@ function fetchJson(url, callback) {
   });
 }
 
-function fetchText(url, callback) {
-  $.ajax({
-    url: url,
-    async: false,
-    dataType: "text",
-    success: callback,
-  });
-}
+
 
 function getJsonFiles() {
   fetchJson("assets/json/all_items.json", function (data) {
@@ -121,18 +114,11 @@ function getJsonFiles() {
     item_counter = { ...data };
   });
 
-  if (eventflag_bst_map === null) {
-    fetchText("assets/json/eventflag_bst.txt", function (data) {
-      eventflag_bst_map = {};
-      const lines = data.split(/\r?\n/);
-      lines.forEach(line => {
-        const parts = line.split(',');
-        if (parts.length === 2) {
-          eventflag_bst_map[parseInt(parts[0])] = parseInt(parts[1]);
-        }
-      });
-    });
-  }
+
+  fetchJson("assets/json/eventflag_bst.json", function (data) {
+    eventflag_bst_map = { ...data };
+  });
+
 }
 
 function get_slot_ls(dat) {
@@ -303,8 +289,6 @@ function decimalToHex(d, padding) {
 
 function getOwnedAndNot(file_read, selected_slot) {
   try {
-    let names = getNames(file_read);
-    console.log(`Analyzing slot: ${selected_slot} (${names[selected_slot]})`);
     let saves_array = new Uint8Array(file_read);
     let slot = get_slot_ls(saves_array)[selected_slot];
     let inventory = Array.from(getInventory(slot));
