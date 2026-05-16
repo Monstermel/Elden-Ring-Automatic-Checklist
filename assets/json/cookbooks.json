@@ -1,0 +1,319 @@
+{
+    "cookbooks": {
+        "0000EAD8": {
+            "name": "Crafting Unlocked"
+        },
+        "000105B8": {
+            "name": "Nomadic warrior's Cookbook [1]"
+        },
+        "000105C2": {
+            "name": "Nomadic Warrior's Cookbook [3]"
+        },
+        "000105CC": {
+            "name": "Nomadic Warrior's Cookbook [6]"
+        },
+        "000105D6": {
+            "name": "Nomadic Warrior's Cookbook [10]"
+        },
+        "000105EA": {
+            "name": "Nomadic Warrior's Cookbook [7]"
+        },
+        "000105F4": {
+            "name": "Nomadic Warrior's Cookbook [12]"
+        },
+        "000105FE": {
+            "name": "Nomadic Warrior's Cookbook [19]"
+        },
+        "00010608": {
+            "name": "Nomadic Warrior's Cookbook [13]"
+        },
+        "00010612": {
+            "name": "Nomadic Warrior's Cookbook [23]"
+        },
+        "0001061C": {
+            "name": "Nomadic Warrior's Cookbook [17]"
+        },
+        "00010626": {
+            "name": "Nomadic warrior's Cookbook [2]"
+        },
+        "00010630": {
+            "name": "Nomadic Warrior's Cookbook [21]"
+        },
+        "0001063A": {
+            "name": "Missionary's Cookbook [6]"
+        },
+        "00010680": {
+            "name": "Armorer's Cookbook [1]"
+        },
+        "0001068A": {
+            "name": "Armorer's Cookbook [2]"
+        },
+        "00010694": {
+            "name": "Nomadic Warrior's Cookbook [11]"
+        },
+        "0001069E": {
+            "name": "Nomadic Warrior's Cookbook [20]"
+        },
+        "000106B2": {
+            "name": "Armorer's Cookbook [7]"
+        },
+        "000106BC": {
+            "name": "Armorer's Cookbook [4]"
+        },
+        "000106C6": {
+            "name": "Nomadic Warrior's Cookbook [18]"
+        },
+        "000106D0": {
+            "name": "Armorer's Cookbook [3]"
+        },
+        "000106DA": {
+            "name": "Nomadic Warrior's Cookbook [16]"
+        },
+        "000106E4": {
+            "name": "Armorer's Cookbook [6]"
+        },
+        "000106EE": {
+            "name": "Armorer's Cookbook [5]"
+        },
+        "00010748": {
+            "name": "Glintstone Craftsman's Cookbook [4]"
+        },
+        "00010752": {
+            "name": "Glintstone Craftsman's Cookbook [1]"
+        },
+        "0001075C": {
+            "name": "Glintstone Craftsman's Cookbook [5]"
+        },
+        "00010766": {
+            "name": "Nomadic Warrior's Cookbook [9]"
+        },
+        "00010770": {
+            "name": "Glintstone Craftsman's Cookbook [8]"
+        },
+        "0001077A": {
+            "name": "Glintstone Craftsman's Cookbook [2]"
+        },
+        "00010784": {
+            "name": "Glintstone Craftsman's Cookbook [6]"
+        },
+        "0001078E": {
+            "name": "Glintstone Craftsman's Cookbook [7]"
+        },
+        "00010798": {
+            "name": "Glintstone Craftsman's Cookbook [3]"
+        },
+        "00010810": {
+            "name": "Missionary's Cookbook [2]"
+        },
+        "0001081A": {
+            "name": "Missionary's Cookbook [1]"
+        },
+        "0001082E": {
+            "name": "Missionary's Cookbook [5]"
+        },
+        "00010838": {
+            "name": "Missionary's Cookbook [4]"
+        },
+        "00010842": {
+            "name": "Missionary's Cookbook [3]"
+        },
+        "000108D8": {
+            "name": "Nomadic Warrior's Cookbook [4]"
+        },
+        "000108F6": {
+            "name": "Nomadic Warrior's Cookbook [5]"
+        },
+        "00010900": {
+            "name": "Perfumer's Cookbook [1]"
+        },
+        "0001090A": {
+            "name": "Perfumer's Cookbook [2]"
+        },
+        "00010914": {
+            "name": "Perfumer's Cookbook [3]"
+        },
+        "0001091E": {
+            "name": "Nomadic Warrior's Cookbook [14]"
+        },
+        "00010928": {
+            "name": "Nomadic Warrior's Cookbook [8]"
+        },
+        "00010932": {
+            "name": "Nomadic Warrior's Cookbook [22]"
+        },
+        "0001093C": {
+            "name": "Nomadic Warrior's Cookbook [15]"
+        },
+        "00010946": {
+            "name": "Nomadic Warrior's Cookbook [24]"
+        },
+        "00010950": {
+            "name": "Perfumer's Cookbook [4]"
+        },
+        "000109A0": {
+            "name": "Ancient Dragon Apostle's Cookbook [1]"
+        },
+        "000109AA": {
+            "name": "Ancient Dragon Apostle's Cookbook [2]"
+        },
+        "000109B4": {
+            "name": "Ancient Dragon Apostle's Cookbook [4]"
+        },
+        "000109BE": {
+            "name": "Ancient Dragon Apostle's Cookbook [3]"
+        },
+        "00010A68": {
+            "name": "Fevor's Cookbook [1]"
+        },
+        "00010A72": {
+            "name": "Fevor's Cookbook [3]"
+        },
+        "00010A7C": {
+            "name": "Fevor's Cookbook [2]"
+        },
+        "00010A86": {
+            "name": "Missionary's Cookbook [7]"
+        },
+        "00010B30": {
+            "name": "Frenzied's Cookbook [1]"
+        },
+        "00010B3A": {
+            "name": "Frenzied's Cookbook [2]"
+        },
+        "00010B9E": {
+            "name": "Forager Brood Cookbook [6]"
+        },
+        "00010BA8": {
+            "name": "Forager Brood Cookbook [1]"
+        },
+        "00010BB2": {
+            "name": "Forager Brood Cookbook [2]"
+        },
+        "00010BBC": {
+            "name": "Forager Brood Cookbook [3]"
+        },
+        "00010BC6": {
+            "name": "Forager Brood Cookbook [4]"
+        },
+        "00010BD0": {
+            "name": "Forager Brood Cookbook [5]"
+        },
+        "00010BDA": {
+            "name": "Igon's Cookbook [2]"
+        },
+        "00010BE4": {
+            "name": "Finger-Weaver's Cookbook [2]"
+        },
+        "00010BEE": {
+            "name": "Greater Potentate's Cookbook [1]"
+        },
+        "00010BF8": {
+            "name": "Greater Potentate's Cookbook [4]"
+        },
+        "00010C02": {
+            "name": "Greater Potentate's Cookbook [5]"
+        },
+        "00010C0C": {
+            "name": "Greater Potentate's Cookbook [12]"
+        },
+        "00010C16": {
+            "name": "Greater Potentate's Cookbook [7]"
+        },
+        "00010C20": {
+            "name": "Greater Potentate's Cookbook [9]"
+        },
+        "00010C2A": {
+            "name": "Greater Potentate's Cookbook [10]"
+        },
+        "00010C34": {
+            "name": "Greater Potentate's Cookbook [11]"
+        },
+        "00010C3E": {
+            "name": "Mad Craftsman's Cookbook [2]"
+        },
+        "00010C48": {
+            "name": "Greater Potentate's Cookbook [8]"
+        },
+        "00010C52": {
+            "name": "Greater Potentate's Cookbook [3]"
+        },
+        "00010C5C": {
+            "name": "Greater Potentate's Cookbook [13]"
+        },
+        "00010C66": {
+            "name": "Greater Potentate's Cookbook [14]"
+        },
+        "00010C70": {
+            "name": "Greater Potentate's Cookbook [6]"
+        },
+        "00010C7A": {
+            "name": "Greater Potentate's Cookbook [2]"
+        },
+        "00010C84": {
+            "name": "Ancient Dragon Knight's Cookbook [1]"
+        },
+        "00010C8E": {
+            "name": "Mad Craftsman's Cookbook [1]"
+        },
+        "00010C98": {
+            "name": "St. Trina Desciple's Cookbook [1]"
+        },
+        "00010CA2": {
+            "name": "Fire Knight's Cookbook [1]"
+        },
+        "00010CAC": {
+            "name": "Ancient Dragon Knight's Cookbook [2]"
+        },
+        "00010CB6": {
+            "name": "Loyal Knight's Cookbook"
+        },
+        "00010CC0": {
+            "name": "Battlefield Priest's Cookbook [1]"
+        },
+        "00010CCA": {
+            "name": "Igon's Cookbook [1]"
+        },
+        "00010CD4": {
+            "name": "Battlefield Priest's Cookbook [2]"
+        },
+        "00010CDE": {
+            "name": "Forager Brood Cookbook [7]"
+        },
+        "00010CE8": {
+            "name": "St. Trina Desciple's Cookbook [3]"
+        },
+        "00010CF2": {
+            "name": "Grave Keeper's Cookbook [2]"
+        },
+        "00010CFC": {
+            "name": "Antiquity Scholar's Cookbook [2]"
+        },
+        "00010D06": {
+            "name": "Tibia's Cookbook"
+        },
+        "00010D10": {
+            "name": "Mad Craftsman's Cookbook [3]"
+        },
+        "00010D1A": {
+            "name": "Battlefield Priest's Cookbook [3]"
+        },
+        "00010D24": {
+            "name": "Fire Knight's Cookbook [2]"
+        },
+        "00010D2E": {
+            "name": "Antiquity Scholar's Cookbook [1]"
+        },
+        "00010D38": {
+            "name": "Finger-Weaver's Cookbook [1]"
+        },
+        "00010D42": {
+            "name": "Battlefield Priest's Cookbook [4]"
+        },
+        "00010D4C": {
+            "name": "Grave Keeper's Cookbook [1]"
+        },
+        "00010D56": {
+            "name": "St. Trina Desciple's Cookbook [2]"
+        }
+    }
+}

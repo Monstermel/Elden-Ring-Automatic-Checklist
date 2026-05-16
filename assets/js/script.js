@@ -99,10 +99,23 @@ function getJsonFiles() {
     }
 
     // Load bosses.json
-    fetchJson("assets/json/bosses.json", function (data_bosses) {
-      all_items.bosses = { ...data_bosses.bosses };
+    fetchJson("assets/json/bosses.json", function (data) {
+      all_items.bosses = { ...data.bosses };
+    });
+    fetchJson("assets/json/graces.json", function (data) {
+      all_items.graces = { ...data.graces };
+    });
+    fetchJson("assets/json/cookbooks.json", function (data) {
+      all_items.cookbooks = { ...data.cookbooks };
+    });
+    fetchJson("assets/json/bell_bearings.json", function (data) {
+      all_items.bell_bearings = { ...data.bell_bearings };
+    });
+    fetchJson("assets/json/whetblades.json", function (data) {
+      all_items.whetblades = { ...data.whetblades };
     });
   });
+
 
   fetchJson("assets/json/item_dict_template.json", function (data) {
     item_dict_template = { ...data };
@@ -297,35 +310,50 @@ function getOwnedAndNot(file_read, selected_slot) {
     let owned_items = JSON.parse(JSON.stringify(item_dict_template));
     let not_owned_items = JSON.parse(JSON.stringify(item_dict_template));
 
-    // Process Bosses
-    Object.keys(all_items.bosses).forEach((flag_id) => {
-      let event_id = parseInt(flag_id);
-      let block_id = Math.floor(event_id / 1000);
+    const processFlags = (category, isGrouped = false) => {
+      if (!all_items[category]) return;
+      Object.keys(all_items[category]).forEach((flag_id) => {
+        let event_id = parseInt(flag_id);
+        let block_id = Math.floor(event_id / 1000);
 
-      let bst_val = eventflag_bst_map[block_id];
-      if (bst_val === undefined) {
-        console.warn(`Missing BST entry for block_id: ${block_id} (event_id: ${event_id})`);
-        return;
-      }
+        let bst_val = eventflag_bst_map[block_id];
+        if (bst_val === undefined) {
+          console.warn(`Missing BST entry for block_id: ${block_id} (event_id: ${event_id})`);
+          return;
+        }
 
-      let block_offset = bst_val * 125 + Math.floor((event_id % 1000) / 8);
-      let bit_index = 7 - (event_id % 8);
+        let block_offset = bst_val * 125 + Math.floor((event_id % 1000) / 8);
+        let bit_index = 7 - (event_id % 8);
 
-      let boss = all_items.bosses[flag_id];
-      let byte = event_flags[block_offset];
+        let item = all_items[category][flag_id];
+        let byte = event_flags[block_offset];
 
-      boss.killed = (byte & (1 << bit_index)) !== 0;
-      if (boss.killed) {
-        owned_items["bosses"].push(boss.name);
-        item_counter["bosses"]["summary"]["owned"]++;
-      } else {
-        not_owned_items["bosses"].push(boss.name);
-        item_counter["bosses"]["summary"]["not-owned"]++;
-      }
+        let owned = (byte & (1 << bit_index)) !== 0;
+        let target = owned ? owned_items : not_owned_items;
 
-      item_counter["bosses"]["summary"]["total"]++;
-    });
+        if (isGrouped) {
+          let sub = item.subcategory || "Other";
+          if (!target[category][sub]) target[category][sub] = [];
+          target[category][sub].push(item.name);
+        } else {
+          target[category].push(item.name);
+        }
 
+        if (owned) {
+          item_counter[category]["summary"]["owned"]++;
+        } else {
+          item_counter[category]["summary"]["not-owned"]++;
+        }
+        item_counter[category]["summary"]["total"]++;
+      });
+
+    };
+
+    processFlags("bosses");
+    processFlags("graces", true);
+    processFlags("cookbooks");
+    processFlags("bell_bearings");
+    processFlags("whetblades");
 
     id_list.forEach((id) => {
       if (id in all_items["armament"]) {
@@ -458,7 +486,12 @@ function getCategorySection(category, owned) {
     let i = 0;
     if (!Array.isArray(result[owned][category])) {
       for (let type in result[owned][category]) {
-        category_container.innerHTML += `<h4>${type}<span style="float: right">${item_counter[category][type][owned]}/${item_counter[category][type]["total"]}</span></h4>`;
+        let counterStr = "";
+        if (item_counter[category] && item_counter[category][type]) {
+          counterStr = `<span style="float: right">${item_counter[category][type][owned]}/${item_counter[category][type]["total"]}</span>`;
+        }
+        category_container.innerHTML += `<h4>${type}${counterStr}</h4>`;
+
         category_container.innerHTML += `<div class="row-flex">`;
         let category_row = category_container.getElementsByClassName(`row-flex`)[i];
         for (let i in result[owned][category][type]) {
