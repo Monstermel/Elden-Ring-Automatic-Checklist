@@ -471,7 +471,15 @@ function getCard(item_name, category_name) {
 					 title="${item_name}">
 <br>
 <p class="card-text">${item_name}</p>
-<a href="https://eldenring.wiki.fextralife.com/${item_name.replace(/ \+\d+$/, "").replaceAll(" ", "+")}" class="stretched-link" target="_blank"> </a> </div>
+<a href="https://eldenring.wiki.fextralife.com/${item_name.replace(/ \+\d+$/, "").replace(/\[(\d+)\]/g, "($1)").replaceAll(" ", "+")}" class="stretched-link" target="_blank"> </a> </div>
+</div>`;
+}
+
+function getGraceCard(item_name) {
+  return `<div class=".col-6 .col-sm-4 .col-md-3 .col-lg-2 col-xl-2">
+<div class="card grace-card" title="${item_name}">
+<p class="card-text">${item_name}</p>
+<a href="https://eldenring.wiki.fextralife.com/Sites+of+Grace" class="stretched-link" target="_blank"> </a> </div>
 </div>`;
 }
 
@@ -495,7 +503,9 @@ function getCategorySection(category, owned) {
         category_container.innerHTML += `<div class="row-flex">`;
         let category_row = category_container.getElementsByClassName(`row-flex`)[i];
         for (let i in result[owned][category][type]) {
-          category_row.innerHTML += getCard(result[owned][category][type][i], category);
+          category_row.innerHTML += category === "graces"
+            ? getGraceCard(result[owned][category][type][i])
+            : getCard(result[owned][category][type][i], category);
         }
         i++;
       }
