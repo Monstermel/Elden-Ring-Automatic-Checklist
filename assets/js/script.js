@@ -114,6 +114,9 @@ function getJsonFiles() {
     fetchJson("assets/json/whetblades.json", function (data) {
       all_items.whetblades = { ...data.whetblades };
     });
+    fetchJson("assets/json/tools.json", function (data) {
+      all_items.tools = { ...data.tools };
+    });
   });
 
 
@@ -394,6 +397,11 @@ function getOwnedAndNot(file_read, selected_slot) {
         item_counter["talisman"]["summary"]["owned"]++;
         item_counter["talisman"]["summary"]["total"]++;
         delete all_items["talisman"][id];
+      } else if (id in all_items["tools"]) {
+        owned_items["tools"].push(all_items["tools"][id]["name"]);
+        item_counter["tools"]["summary"]["owned"]++;
+        item_counter["tools"]["summary"]["total"]++;
+        delete all_items["tools"][id];
       }
     });
 
@@ -411,7 +419,7 @@ function getOwnedAndNot(file_read, selected_slot) {
           item_counter[item_type][all_items[item_type][id]["category"]]["total"]++;
           item_counter[item_type]["summary"]["not-owned"]++;
           item_counter[item_type]["summary"]["total"]++;
-        } else if (item_type === "spiritAshes" || item_type === "talisman") {
+        } else if (item_type === "spiritAshes" || item_type === "talisman" || item_type === "tools") {
           not_owned_items[item_type].push(all_items[item_type][id]["name"]);
           item_counter[item_type]["summary"]["not-owned"]++;
           item_counter[item_type]["summary"]["total"]++;

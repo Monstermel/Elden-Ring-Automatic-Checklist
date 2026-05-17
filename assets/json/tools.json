@@ -1,0 +1,88 @@
+{
+    "tools": {
+        "40000073": {
+            "name": "Memory of Grace"
+        },
+        "40000082": {
+            "name": "Spectral Steed Whistle"
+        },
+        "400007F8": {
+            "name": "Telescope"
+        },
+        "40000816": {
+            "name": "Lantern"
+        },
+        "40000820": {
+            "name": "Blasphemous Claw"
+        },
+        "4000085C": {
+            "name": "Margit's Shackle"
+        },
+        "40000866": {
+            "name": "Mohg's Shackle"
+        },
+        "40000870": {
+            "name": "Pureblood Knight's Medal"
+        },
+        "40000898": {
+            "name": "Prattling Pate \"Hello\""
+        },
+        "40000899": {
+            "name": "Prattling Pate \"Thank you\""
+        },
+        "4000089A": {
+            "name": "Prattling Pate \"Apologies\""
+        },
+        "4000089B": {
+            "name": "Prattling Pate \"Wonderful\""
+        },
+        "4000089C": {
+            "name": "Prattling Pate \"Please Help\""
+        },
+        "4000089D": {
+            "name": "Prattling Pate \"My Beloved\""
+        },
+        "4000089E": {
+            "name": "Prattling Pate \"Let's get to it\""
+        },
+        "4000089F": {
+            "name": "Prattling Pate \"You're Beautiful\""
+        },
+        "40000BB8": {
+            "name": "Ancestral Infant's Head"
+        },
+        "40000BC2": {
+            "name": "Omen Bairn"
+        },
+        "40000BC3": {
+            "name": "Regal Omen Bairn"
+        },
+        "40000BE0": {
+            "name": "Mimic's Veil"
+        },
+        "40000C08": {
+            "name": "Wraith Calling Bell"
+        },
+        "401E8A1A": {
+            "name": "Rock Heart"
+        },
+        "401E8A24": {
+            "name": "Priestess Heart"
+        },
+        "401E8A2E": {
+            "name": "Lamenter's Mask"
+        },
+        "401E8AA6": {
+            "name": "Prattling Pate \"Lamentation\""
+        },
+        "401E8EB8": {
+            "name": "Bondstone"
+        },
+        "401E8F3A": {
+            "name": "Horned Bairn"
+        },
+        "401E8F44": {
+            "name": "Perfumed Oil of Ranah"
+        }
+    }
+}
