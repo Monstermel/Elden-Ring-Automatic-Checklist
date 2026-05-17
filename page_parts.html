@@ -127,6 +127,17 @@
     <h3>Tools</h3>
   </button>
   <div class="container-fluid collapse" id="owned-tools"></div>
+
+  <button
+    class="btn btn-dark row button-collapse"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#owned-gestures"
+    onclick="getCategorySection('gestures', 'owned')"
+  >
+    <h3>Gestures</h3>
+  </button>
+  <div class="container-fluid collapse" id="owned-gestures"></div>
 </div>
 
 <div class="container" style="display: flex; flex-direction: column" id="not-owned-section">
@@ -258,4 +269,15 @@
     <h3>Tools</h3>
   </button>
   <div class="container-fluid collapse" id="not-owned-tools"></div>
+
+  <button
+    class="btn btn-dark row button-collapse"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#not-owned-gestures"
+    onclick="getCategorySection('gestures', 'not-owned')"
+  >
+    <h3>Gestures</h3>
+  </button>
+  <div class="container-fluid collapse" id="not-owned-gestures"></div>
 </div>
