@@ -120,6 +120,9 @@ function getJsonFiles() {
     fetchJson("assets/json/gestures.json", function (data) {
       all_items.gestures = { ...data.gestures };
     });
+    fetchJson("assets/json/crystal_tears.json", function (data) {
+      all_items.crystal_tears = { ...data.crystal_tears };
+    });
   });
 
 
@@ -410,6 +413,11 @@ function getOwnedAndNot(file_read, selected_slot) {
         item_counter["gestures"]["summary"]["owned"]++;
         item_counter["gestures"]["summary"]["total"]++;
         delete all_items["gestures"][id];
+      } else if (id in all_items["crystal_tears"]) {
+        owned_items["crystal_tears"].push(all_items["crystal_tears"][id]["name"]);
+        item_counter["crystal_tears"]["summary"]["owned"]++;
+        item_counter["crystal_tears"]["summary"]["total"]++;
+        delete all_items["crystal_tears"][id];
       }
     });
 
@@ -427,7 +435,7 @@ function getOwnedAndNot(file_read, selected_slot) {
           item_counter[item_type][all_items[item_type][id]["category"]]["total"]++;
           item_counter[item_type]["summary"]["not-owned"]++;
           item_counter[item_type]["summary"]["total"]++;
-        } else if (item_type === "spiritAshes" || item_type === "talisman" || item_type === "tools" || item_type === "gestures") {
+        } else if (item_type === "spiritAshes" || item_type === "talisman" || item_type === "tools" || item_type === "gestures" || item_type === "crystal_tears") {
           not_owned_items[item_type].push(all_items[item_type][id]["name"]);
           item_counter[item_type]["summary"]["not-owned"]++;
           item_counter[item_type]["summary"]["total"]++;
