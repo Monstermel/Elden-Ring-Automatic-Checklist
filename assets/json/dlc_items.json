@@ -88,7 +88,7 @@
             "name": "Spirit Sword",
             "class": "Curved Sword"
         },
-        "00820140":{
+        "00820140": {
             "name": "Horned Warrior's Greatsword",
             "class": "Curved Greatsword"
         },
@@ -410,6 +410,38 @@
         }
     },
     "armor": {
+        "10502404": {
+            "name": "Divine Beast Warrior Armor",
+            "category": "Body"
+        },
+        "10502788": {
+            "name": "Divine Bird Helm",
+            "category": "Head"
+        },
+        "10502850": {
+            "name": "Divine Bird Warrior Gauntlets",
+            "category": "Arms"
+        },
+        "10504344": {
+            "name": "Rellana's Armor",
+            "category": "Body"
+        },
+        "10509100": {
+            "name": "Shadow Militiaman Helm",
+            "category": "Head"
+        },
+        "10509164": {
+            "name": "Shadow Militiaman Armor",
+            "category": "Body"
+        },
+        "10510630": {
+            "name": "Crucible Hammer-Helm",
+            "category": "Head"
+        },
+        "10515450": {
+            "name": "Imp Head (Lion)",
+            "category": "Head"
+        },
         "102DC6C0": {
             "name": "Dane's Hat",
             "category": "Head"
@@ -850,21 +882,9 @@
             "name": "Divine Beast Helm",
             "category": "Head"
         },
-        "10502404": {
-            "name": "Divine Beast Warrior Armor",
-            "category": "Body"
-        },
-        "10502788": {
-            "name": "Divine Bird Helm",
-            "category": "Head"
-        },
         "105027EC": {
             "name": "Divine Bird Warrior Armor",
             "category": "Body"
-        },
-        "10502850": {
-            "name": "Divine Bird Warrior Gauntlets",
-            "category": "Arms"
         },
         "105028B4": {
             "name": "Divine Bird Warrior Greaves",
@@ -873,10 +893,6 @@
         "105042E0": {
             "name": "Rellana's Helm",
             "category": "Head"
-        },
-        "10504344": {
-            "name": "Rellana's Armor",
-            "category": "Body"
         },
         "105043A8": {
             "name": "Rellana's Gloves",
@@ -906,14 +922,6 @@
             "name": "Circlet of Light",
             "category": "Head"
         },
-        "10509100": {
-            "name": "Shadow Militiaman Helm",
-            "category": "Head"
-        },
-        "10509164": {
-            "name": "Shadow Militiaman Armor",
-            "category": "Body"
-        },
         "105091C8": {
             "name": "Shadow Militiaman Gauntlets",
             "category": "Arms"
@@ -930,20 +938,48 @@
             "name": "St. Trina's Blossom",
             "category": "Head"
         },
-        "10510630": {
-            "name": "Crucible Hammer-Helm",
-            "category": "Head"
-        },
         "10512D40": {
             "name": "Greatjar",
-            "category": "Head"
-        },
-        "10515450": {
-            "name": "Imp Head (Lion)",
             "category": "Head"
         }
     },
     "ashesOfWar": {
+        "80062250": {
+            "name": "Ash of War: Piercing Throw",
+            "category": "Keen"
+        },
+        "80062638": {
+            "name": "Ash of War: Scattershot Throw",
+            "category": "Keen"
+        },
+        "80064190": {
+            "name": "Ash of War: Swift Slash",
+            "category": "Keen"
+        },
+        "80064578": {
+            "name": "Ash of War: Overhead Stance",
+            "category": "Keen"
+        },
+        "80064960": {
+            "name": "Ash of War: Wing Stance",
+            "category": "Quality"
+        },
+        "80065130": {
+            "name": "Ash of War: Flame Skewer",
+            "category": "Flame Art"
+        },
+        "80065518": {
+            "name": "Ash of War: Savage Lion's Claw",
+            "category": "Heavy"
+        },
+        "80065900": {
+            "name": "Ash of War: Divine Beast Frost Stomp",
+            "category": "Cold"
+        },
+        "80067070": {
+            "name": "Ash of War: Ghostflame Call",
+            "category": "Cold"
+        },
         "80030D40": {
             "name": "Ash of War: Dryleaf Whirlwind",
             "category": "Standard"
@@ -959,14 +995,6 @@
         "80061E68": {
             "name": "Ash of War: Palm Blast",
             "category": "Standard"
-        },
-        "80062250": {
-            "name": "Ash of War: Piercing Throw",
-            "category": "Keen"
-        },
-        "80062638": {
-            "name": "Ash of War: Scattershot Throw",
-            "category": "Keen"
         },
         "80062A20": {
             "name": "Ash of War: Wall of Sparks",
@@ -988,33 +1016,9 @@
             "name": "Ash of War: Blind Spot",
             "category": "Keen"
         },
-        "80064190": {
-            "name": "Ash of War: Swift Slash",
-            "category": "Keen"
-        },
-        "80064578": {
-            "name": "Ash of War: Overhead Stance",
-            "category": "Keen"
-        },
-        "80064960": {
-            "name": "Ash of War: Wing Stance",
-            "category": "Quality"
-        },
         "80064D48": {
             "name": "Ash of War: Blinkbolt",
             "category": "Lightning"
-        },
-        "80065130": {
-            "name": "Ash of War: Flame Skewer",
-            "category": "Flame Art"
-        },
-        "80065518": {
-            "name": "Ash of War: Savage Lion's Claw",
-            "category": "Heavy"
-        },
-        "80065900": {
-            "name": "Ash of War: Divine Beast Frost Stomp",
-            "category": "Cold"
         },
         "80065CE8": {
             "name": "Ash of War: Flame Spear",
@@ -1027,10 +1031,6 @@
         "800664B8": {
             "name": "Ash of War: Shriek of Sorrow",
             "category": "Occult"
-        },
-        "80067070": {
-            "name": "Ash of War: Ghostflame Call",
-            "category": "Cold"
         },
         "8007B4A8": {
             "name": "Ash of War: The Poison Flower Blooms Twice",
@@ -1216,14 +1216,14 @@
         }
     },
     "spiritAshes": {
+        "40219990": {
+            "name": "Gravebird Ashes"
+        },
         "402191C0": {
             "name": "Curseblade Meera"
         },
         "402195A8": {
             "name": "Bloodfiend Hexer's Ashes"
-        },
-        "40219990": {
-            "name": "Gravebird Ashes"
         },
         "40219D78": {
             "name": "Fire Knight Hilde"
@@ -1278,6 +1278,18 @@
         }
     },
     "talisman": {
+        "20002008": {
+            "name": "Talisman of Lord's Bestowal"
+        },
+        "20002012": {
+            "name": "Verdigris Discus"
+        },
+        "20002026": {
+            "name": "Blade of Mercy"
+        },
+        "20002030": {
+            "name": "Talisman of All Crucibles"
+        },
         "200008AC": {
             "name": "Perfumer's Talisman"
         },
@@ -1383,20 +1395,1277 @@
         "20001FFE": {
             "name": "Beloved Stardust"
         },
-        "20002008": {
-            "name": "Talisman of Lord's Bestowal"
-        },
-        "20002012": {
-            "name": "Verdigris Discus"
-        },
         "2000201C": {
             "name": "Rellana's Cameo"
-        },
-        "20002026": {
-            "name": "Blade of Mercy"
-        },
-        "20002030": {
-            "name": "Talisman of All Crucibles"
         }
+    },
+    "bosses": {
+        "2046410800": {
+            "name": "Knight of the Solitary Gaol (Blackgaol Knight)"
+        },
+        "43000800": {
+            "name": "Chief Bloodfiend"
+        },
+        "41000800": {
+            "name": "Demi-Human Swordmaster Onze"
+        },
+        "2046460800": {
+            "name": "Divine Beast Dancing Lion (Ancient Ruins of Rauh)"
+        },
+        "2045440800": {
+            "name": "Ghostflame Dragon (Gravesite Plain)"
+        },
+        "2049430800": {
+            "name": "Ghostflame Dragon (Scadu Altus)"
+        },
+        "2048380850": {
+            "name": "Ghostflame Dragon (Cerulean Coast)"
+        },
+        "2048440800": {
+            "name": "Rellana, Twin Moon Knight"
+        },
+        "2046450800": {
+            "name": "Red Bear (Gravesite Plain)"
+        },
+        "2049450800": {
+            "name": "Ralva the Great Red Bear"
+        },
+        "2044470800": {
+            "name": "Rugalea the Great Red Bear"
+        },
+        "2049430850": {
+            "name": "Black Knight Edreed (Edredd)"
+        },
+        "2047450800": {
+            "name": "Black Knight Garrew"
+        },
+        "2051450800": {
+            "name": "Count Ymir, Mother of Fingers"
+        },
+        "41010800": {
+            "name": "Curseblade Labirith"
+        },
+        "40000800": {
+            "name": "Death Knight (Scadu Altus)"
+        },
+        "40010800": {
+            "name": "Death Knight (Rauh Base)"
+        },
+        "2049440800": {
+            "name": "Dryleaf Dane (Boss)"
+        },
+        "21000850": {
+            "name": "Golden Hippopotamus"
+        },
+        "21010800": {
+            "name": "Messmer the Impaler (Messmer + Base Serpent)"
+        },
+        "25000800": {
+            "name": "Metyr, Mother of Fingers"
+        },
+        "2051440800": {
+            "name": "Rakshasa"
+        },
+        "2052430800": {
+            "name": "Jori, Elder Inquisitor"
+        },
+        "2046380800": {
+            "name": "Dancer of Ranah"
+        },
+        "2046400800": {
+            "name": "Demi-Human Queen Marigga"
+        },
+        "22000800": {
+            "name": "Putrescent Knight"
+        },
+        "2047390800": {
+            "name": "Death Rite Bird (Charo's Hidden Grave)"
+        },
+        "41020800": {
+            "name": "Lamenter"
+        },
+        "43010800": {
+            "name": "Ancient Dragon-Man"
+        },
+        "2054390850": {
+            "name": "Ancient Dragon Senessax"
+        },
+        "2054390800": {
+            "name": "Bayle the Dread"
+        },
+        "2049410800": {
+            "name": "Jagged Peak Drake (Jagged Peak)"
+        },
+        "2052400800": {
+            "name": "Jagged Peak Drake Duo (Jagged Peak)"
+        },
+        "28000800": {
+            "name": "Midra Lord of Frenzied Flame"
+        },
+        "2052480800": {
+            "name": "Fallingstar Beast (Scaduview)"
+        },
+        "2050480800": {
+            "name": "Scadutree Avatar"
+        },
+        "2049480800": {
+            "name": "Commander Gaius"
+        },
+        "2050470800": {
+            "name": "Tree Sentinel (Ambush) (Scaduview)"
+        },
+        "2050480860": {
+            "name": "Tree Sentinel (Exposed) (Scaduview)"
+        },
+        "2044450800": {
+            "name": "Romina, Saint of the Bud"
+        },
+        "20010800": {
+            "name": "Promised Consort Radahn"
+        }
+    },
+    "graces": {
+        "74000": {
+            "name": "Fog Rift Catacombs",
+            "subcategory": "Gravesite Plain"
+        },
+        "74001": {
+            "name": "Scorpion River Catacombs",
+            "subcategory": "Rauh Base"
+        },
+        "74002": {
+            "name": "Darklight Catacombs",
+            "subcategory": "Scadu Altus"
+        },
+        "74100": {
+            "name": "Belurat Gaol",
+            "subcategory": "Gravesite Plain"
+        },
+        "74101": {
+            "name": "Bonny Gaol",
+            "subcategory": "Scadu Altus"
+        },
+        "74102": {
+            "name": "Lamenter's Gaol",
+            "subcategory": "Charo's Hidden Grave"
+        },
+        "74200": {
+            "name": "Ruined Forge Lava Intake",
+            "subcategory": "Gravesite Plain"
+        },
+        "74202": {
+            "name": "Ruined Forge of Starfall Past",
+            "subcategory": "Scadu Altus"
+        },
+        "74203": {
+            "name": "Taylew's Ruined Forge",
+            "subcategory": "Rauh Base"
+        },
+        "74300": {
+            "name": "Rivermouth Cave",
+            "subcategory": "Gravesite Plain"
+        },
+        "74301": {
+            "name": "Dragon's Pit",
+            "subcategory": "Gravesite Plain"
+        },
+        "74351": {
+            "name": "Dragon's Pit Terminus",
+            "subcategory": "Gravesite Plain"
+        },
+        "76100": {
+            "name": "Church of Elleh",
+            "subcategory": "Limgrave"
+        },
+        "76101": {
+            "name": "The First Step",
+            "subcategory": "Limgrave"
+        },
+        "76102": {
+            "name": "Stormhill Shack",
+            "subcategory": "Stormhill"
+        },
+        "76103": {
+            "name": "Artist's Shack",
+            "subcategory": "Limgrave"
+        },
+        "76104": {
+            "name": "Third Church of Marika",
+            "subcategory": "Limgrave"
+        },
+        "76105": {
+            "name": "Fort Haight West",
+            "subcategory": "Limgrave"
+        },
+        "76106": {
+            "name": "Agheel Lake South",
+            "subcategory": "Limgrave"
+        },
+        "76108": {
+            "name": "Agheel Lake North",
+            "subcategory": "Limgrave"
+        },
+        "76110": {
+            "name": "Church of Dragon Communion",
+            "subcategory": "Limgrave"
+        },
+        "76111": {
+            "name": "Gatefront",
+            "subcategory": "Limgrave"
+        },
+        "76113": {
+            "name": "Seaside Ruins",
+            "subcategory": "Limgrave"
+        },
+        "76114": {
+            "name": "Mistwood Outskirts",
+            "subcategory": "Limgrave"
+        },
+        "76116": {
+            "name": "Murkwater Coast",
+            "subcategory": "Limgrave"
+        },
+        "76117": {
+            "name": "Saintsbridge",
+            "subcategory": "Stormhill"
+        },
+        "76118": {
+            "name": "Warmaster's Shack",
+            "subcategory": "Stormhill"
+        },
+        "76119": {
+            "name": "Summonwater Village Outskirts",
+            "subcategory": "Limgrave"
+        },
+        "76120": {
+            "name": "Waypoint Ruins Cellar",
+            "subcategory": "Limgrave"
+        },
+        "76150": {
+            "name": "Church of Pilgrimage",
+            "subcategory": "Weeping Peninsula"
+        },
+        "76151": {
+            "name": "Castle Morne Rampart",
+            "subcategory": "Weeping Peninsula"
+        },
+        "76152": {
+            "name": "Tombsward",
+            "subcategory": "Weeping Peninsula"
+        },
+        "76153": {
+            "name": "South of the Lookout Tower",
+            "subcategory": "Weeping Peninsula"
+        },
+        "76154": {
+            "name": "Ailing Village Outskirts",
+            "subcategory": "Weeping Peninsula"
+        },
+        "76155": {
+            "name": "Beside the Crater-Pocked Glade",
+            "subcategory": "Weeping Peninsula"
+        },
+        "76156": {
+            "name": "Isolated Merchant's Shack",
+            "subcategory": "Weeping Peninsula"
+        },
+        "76157": {
+            "name": "Bridge of Sacrifice",
+            "subcategory": "Weeping Peninsula"
+        },
+        "76158": {
+            "name": "Castle Morne Lift",
+            "subcategory": "Weeping Peninsula"
+        },
+        "76159": {
+            "name": "Behind The Castle",
+            "subcategory": "Weeping Peninsula"
+        },
+        "76160": {
+            "name": "Beside the Rampart Gaol",
+            "subcategory": "Weeping Peninsula"
+        },
+        "76161": {
+            "name": "Morne Moangrave",
+            "subcategory": "Weeping Peninsula"
+        },
+        "76162": {
+            "name": "Fourth Church of Marika",
+            "subcategory": "Weeping Peninsula"
+        },
+        "76200": {
+            "name": "Lake-Facing Cliffs",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76201": {
+            "name": "Liurnia Lake Shore",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76202": {
+            "name": "Laskyar Ruins",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76203": {
+            "name": "Scenic Isle",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76204": {
+            "name": "Academy Gate Town",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76205": {
+            "name": "South Raya Lucaria Gate",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76206": {
+            "name": "Main Academy Gate",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76207": {
+            "name": "East Raya Lucaria Gate",
+            "subcategory": "Bellum Highway"
+        },
+        "76208": {
+            "name": "Bellum Church",
+            "subcategory": "Bellum Highway"
+        },
+        "76209": {
+            "name": "Grand Lift of Dectus",
+            "subcategory": "Bellum Highway"
+        },
+        "76210": {
+            "name": "Foot of the Four Belfries",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76211": {
+            "name": "Sorcerer's Isle",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76212": {
+            "name": "Northern Liurnia Lake Shore",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76213": {
+            "name": "Road to the Manor",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76214": {
+            "name": "Main Caria Manor Gate",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76215": {
+            "name": "Slumbering Wolf's Shack",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76216": {
+            "name": "Boilprawn Shack",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76217": {
+            "name": "Artist's Shack",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76218": {
+            "name": "Revenger's Shack",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76219": {
+            "name": "Folly on the Lake",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76220": {
+            "name": "Village of the Albinaurics",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76221": {
+            "name": "Liurnia Highway North",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76222": {
+            "name": "Gate Town Bridge",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76223": {
+            "name": "Eastern Liurnia Lake Shore",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76224": {
+            "name": "Church of Vows",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76225": {
+            "name": "Ruined Labyrinth",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76226": {
+            "name": "Mausoleum Compound",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76227": {
+            "name": "The Four Belfries",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76228": {
+            "name": "Ranni's Rise",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76229": {
+            "name": "Ravine-Veiled Village",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76230": {
+            "name": "Manor Upper Level",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76231": {
+            "name": "Manor Lower Level",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76232": {
+            "name": "Royal Moongazing Grounds",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76233": {
+            "name": "Gate Town North",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76234": {
+            "name": "Eastern Tableland",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76235": {
+            "name": "The Ravine",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76236": {
+            "name": "Fallen Ruins of the Lake",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76237": {
+            "name": "Converted Tower",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76238": {
+            "name": "Behind Caria Manor",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76239": {
+            "name": "Frenzied Flame Village Outskirts",
+            "subcategory": "Bellum Highway"
+        },
+        "76240": {
+            "name": "Church of Inhibition",
+            "subcategory": "Bellum Highway"
+        },
+        "76241": {
+            "name": "Temple Quarter",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76242": {
+            "name": "East Gate Bridge Trestle",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76243": {
+            "name": "Crystalline Woods",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76244": {
+            "name": "Liurnia Highway South",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76245": {
+            "name": "Jarburg",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76247": {
+            "name": "Ranni's Chamber",
+            "subcategory": "Liurnia of the Lakes"
+        },
+        "76250": {
+            "name": "Moonlight Altar",
+            "subcategory": "Moonlight Altar"
+        },
+        "76251": {
+            "name": "Cathedral of Manus Celes",
+            "subcategory": "Moonlight Altar"
+        },
+        "76252": {
+            "name": "Altar South",
+            "subcategory": "Moonlight Altar"
+        },
+        "76300": {
+            "name": "Abandoned Coffin",
+            "subcategory": "Altus Plateau"
+        },
+        "76301": {
+            "name": "Altus Plateau",
+            "subcategory": "Altus Plateau"
+        },
+        "76302": {
+            "name": "Erdtree-Gazing Hill",
+            "subcategory": "Altus Plateau"
+        },
+        "76303": {
+            "name": "Altus Highway Junction",
+            "subcategory": "Altus Plateau"
+        },
+        "76304": {
+            "name": "Forest-Spanning Greatbridge",
+            "subcategory": "Altus Plateau"
+        },
+        "76305": {
+            "name": "Rampartside Path",
+            "subcategory": "Altus Plateau"
+        },
+        "76306": {
+            "name": "Bower of Bounty",
+            "subcategory": "Altus Plateau"
+        },
+        "76307": {
+            "name": "Road of Iniquity Side Path",
+            "subcategory": "Altus Plateau"
+        },
+        "76308": {
+            "name": "Windmill Village",
+            "subcategory": "Altus Plateau"
+        },
+        "76309": {
+            "name": "Outer Wall Phantom Tree",
+            "subcategory": "Capital Outskirts"
+        },
+        "76310": {
+            "name": "Minor Erdtree Church",
+            "subcategory": "Capital Outskirts"
+        },
+        "76311": {
+            "name": "Hermit Merchant's Shack",
+            "subcategory": "Capital Outskirts"
+        },
+        "76312": {
+            "name": "Outer Wall Battleground",
+            "subcategory": "Capital Outskirts"
+        },
+        "76313": {
+            "name": "Windmill Heights",
+            "subcategory": "Altus Plateau"
+        },
+        "76314": {
+            "name": "Capital Rampart",
+            "subcategory": "Capital Outskirts"
+        },
+        "76320": {
+            "name": "Shaded Castle Ramparts",
+            "subcategory": "Altus Plateau"
+        },
+        "76321": {
+            "name": "Shaded Castle Inner Gate",
+            "subcategory": "Altus Plateau"
+        },
+        "76322": {
+            "name": "Castellan's Hall",
+            "subcategory": "Altus Plateau"
+        },
+        "76350": {
+            "name": "Bridge of Iniquity",
+            "subcategory": "Mt. Gelmir"
+        },
+        "76351": {
+            "name": "First Mt. Gelmir Campsite",
+            "subcategory": "Mt. Gelmir"
+        },
+        "76352": {
+            "name": "Ninth Mt. Gelmir Campsite",
+            "subcategory": "Mt. Gelmir"
+        },
+        "76353": {
+            "name": "Road of Iniquity",
+            "subcategory": "Mt. Gelmir"
+        },
+        "76354": {
+            "name": "Seethewater River",
+            "subcategory": "Mt. Gelmir"
+        },
+        "76355": {
+            "name": "Seethewater Terminus",
+            "subcategory": "Mt. Gelmir"
+        },
+        "76356": {
+            "name": "Craftsman's Shack",
+            "subcategory": "Mt. Gelmir"
+        },
+        "76357": {
+            "name": "Primeval Sorcerer Azur",
+            "subcategory": "Mt. Gelmir"
+        },
+        "76400": {
+            "name": "Smoldering Church",
+            "subcategory": "Caelid"
+        },
+        "76401": {
+            "name": "Rotview Balcony",
+            "subcategory": "Caelid"
+        },
+        "76402": {
+            "name": "Fort Gael North",
+            "subcategory": "Caelid"
+        },
+        "76403": {
+            "name": "Caelem Ruins",
+            "subcategory": "Caelid"
+        },
+        "76404": {
+            "name": "Cathedral of Dragon Communion",
+            "subcategory": "Caelid"
+        },
+        "76405": {
+            "name": "Caelid Highway South",
+            "subcategory": "Caelid"
+        },
+        "76406": {
+            "name": "Aeonia Swamp Shore",
+            "subcategory": "Swamp of Aeonia"
+        },
+        "76407": {
+            "name": "Astray from Caelid Highway North",
+            "subcategory": "Swamp of Aeonia"
+        },
+        "76409": {
+            "name": "Smoldering Wall",
+            "subcategory": "Caelid"
+        },
+        "76410": {
+            "name": "Deep Siofra Well",
+            "subcategory": "Caelid"
+        },
+        "76411": {
+            "name": "Southern Aeonia Swamp Bank",
+            "subcategory": "Caelid"
+        },
+        "76412": {
+            "name": "Heart of Aeonia",
+            "subcategory": "Swamp of Aeonia"
+        },
+        "76413": {
+            "name": "Inner Aeonia",
+            "subcategory": "Swamp of Aeonia"
+        },
+        "76414": {
+            "name": "Sellia Backstreets",
+            "subcategory": "Caelid"
+        },
+        "76415": {
+            "name": "Chair-Crypt of Sellia",
+            "subcategory": "Caelid"
+        },
+        "76416": {
+            "name": "Sellia Under-Stair",
+            "subcategory": "Caelid"
+        },
+        "76417": {
+            "name": "Impassable Greatbridge",
+            "subcategory": "Caelid"
+        },
+        "76418": {
+            "name": "Church of the Plague",
+            "subcategory": "Caelid"
+        },
+        "76419": {
+            "name": "Redmane Castle Plaza",
+            "subcategory": "Caelid"
+        },
+        "76420": {
+            "name": "Chamber Outside the Plaza",
+            "subcategory": "Caelid"
+        },
+        "76422": {
+            "name": "Starscourge Radahn",
+            "subcategory": "Caelid"
+        },
+        "76450": {
+            "name": "Dragonbarrow West",
+            "subcategory": "Greyoll's Dragonbarrow"
+        },
+        "76451": {
+            "name": "Isolated Merchant's Shack",
+            "subcategory": "Greyoll's Dragonbarrow"
+        },
+        "76452": {
+            "name": "Dragonbarrow Fork",
+            "subcategory": "Greyoll's Dragonbarrow"
+        },
+        "76453": {
+            "name": "Fort Faroth",
+            "subcategory": "Greyoll's Dragonbarrow"
+        },
+        "76454": {
+            "name": "Bestial Sanctum",
+            "subcategory": "Greyoll's Dragonbarrow"
+        },
+        "76455": {
+            "name": "Lenne's Rise",
+            "subcategory": "Greyoll's Dragonbarrow"
+        },
+        "76456": {
+            "name": "Farum Greatbridge",
+            "subcategory": "Greyoll's Dragonbarrow"
+        },
+        "76500": {
+            "name": "Forbidden Lands",
+            "subcategory": "Forbiden Lands"
+        },
+        "76501": {
+            "name": "Zamor Ruins",
+            "subcategory": "Mountaintops of the Giants"
+        },
+        "76502": {
+            "name": "Grand Lift of Rold",
+            "subcategory": "Forbiden Lands"
+        },
+        "76503": {
+            "name": "Ancient Snow Valley Ruins",
+            "subcategory": "Mountaintops of the Giants"
+        },
+        "76504": {
+            "name": "Freezing Lake",
+            "subcategory": "Mountaintops of the Giants"
+        },
+        "76505": {
+            "name": "First Church of Marika",
+            "subcategory": "Mountaintops of the Giants"
+        },
+        "76506": {
+            "name": "Giant's Gravepost",
+            "subcategory": "Flame Peak"
+        },
+        "76507": {
+            "name": "Church of Repose",
+            "subcategory": "Flame Peak"
+        },
+        "76508": {
+            "name": "Foot of the Forge",
+            "subcategory": "Flame Peak"
+        },
+        "76509": {
+            "name": "Fire Giant",
+            "subcategory": "Flame Peak"
+        },
+        "76510": {
+            "name": "Forge of the Giants",
+            "subcategory": "Flame Peak"
+        },
+        "76520": {
+            "name": "Whiteridge Road",
+            "subcategory": "Mountaintops of the Giants"
+        },
+        "76521": {
+            "name": "Snow Valley Ruins Overlook",
+            "subcategory": "Mountaintops of the Giants"
+        },
+        "76522": {
+            "name": "Castle Sol Main Gate",
+            "subcategory": "Mountaintops of the Giants"
+        },
+        "76523": {
+            "name": "Church of the Eclipse",
+            "subcategory": "Mountaintops of the Giants"
+        },
+        "76524": {
+            "name": "Castle Sol Rooftop",
+            "subcategory": "Mountaintops of the Giants"
+        },
+        "76550": {
+            "name": "Consecrated Snowfield",
+            "subcategory": "Consecrated Snowfield"
+        },
+        "76551": {
+            "name": "Inner Consecrated Snowfield",
+            "subcategory": "Consecrated Snowfield"
+        },
+        "76652": {
+            "name": "Ordina, Liturgical Town",
+            "subcategory": "Consecrated Snowfield"
+        },
+        "76653": {
+            "name": "Apostate Derelict",
+            "subcategory": "Consecrated Snowfield"
+        },
+        "76800": {
+            "name": "Gravesite Plain",
+            "subcategory": "Gravesite Plain"
+        },
+        "76801": {
+            "name": "Scorched Ruins",
+            "subcategory": "Gravesite Plain"
+        },
+        "76802": {
+            "name": "Three-Path Cross",
+            "subcategory": "Gravesite Plain"
+        },
+        "76803": {
+            "name": "Main Gate Cross",
+            "subcategory": "Gravesite Plain"
+        },
+        "76804": {
+            "name": "Cliffroad Terminus",
+            "subcategory": "Gravesite Plain"
+        },
+        "76805": {
+            "name": "Greatbridge, North",
+            "subcategory": "Gravesite Plain"
+        },
+        "76810": {
+            "name": "Pillar Path Cross",
+            "subcategory": "Gravesite Plain"
+        },
+        "76811": {
+            "name": "Pillar Path Waypoint",
+            "subcategory": "Gravesite Plain"
+        },
+        "76812": {
+            "name": "Ellac River Cave",
+            "subcategory": "Gravesite Plain"
+        },
+        "76813": {
+            "name": "Castle Front",
+            "subcategory": "Gravesite Plain"
+        },
+        "76821": {
+            "name": "Castle Ensis Checkpoint",
+            "subcategory": "Castle Ensis"
+        },
+        "76822": {
+            "name": "Castle-Lord's Chamber",
+            "subcategory": "Castle Ensis"
+        },
+        "76823": {
+            "name": "Ensis Moongazing Grounds",
+            "subcategory": "Castle Ensis"
+        },
+        "76830": {
+            "name": "Ellac River Downstream",
+            "subcategory": "Gravesite Plain"
+        },
+        "76831": {
+            "name": "Cerulean Coast",
+            "subcategory": "Cerulean Coast"
+        },
+        "76832": {
+            "name": "Cerulean Coast West",
+            "subcategory": "Cerulean Coast"
+        },
+        "76833": {
+            "name": "The Fissure",
+            "subcategory": "Cerulean Coast"
+        },
+        "76834": {
+            "name": "Finger Ruins of Rhia",
+            "subcategory": "Cerulean Coast"
+        },
+        "76835": {
+            "name": "Cerulean Coast Cross",
+            "subcategory": "Cerulean Coast"
+        },
+        "76840": {
+            "name": "Grand Altar of Dragon Communion",
+            "subcategory": "Foot of the Jagged Peak"
+        },
+        "76841": {
+            "name": "Charo's Hidden Grave",
+            "subcategory": "Charo's Hidden Grave"
+        },
+        "76850": {
+            "name": "Foot of the Jagged Peak",
+            "subcategory": "Foot of the Jagged Peak"
+        },
+        "76851": {
+            "name": "Jagged Peak Mountainside",
+            "subcategory": "Jagged Peak"
+        },
+        "76852": {
+            "name": "Jagged Peak Summit",
+            "subcategory": "Jagged Peak"
+        },
+        "76853": {
+            "name": "Rest of the Dread Dragon",
+            "subcategory": "Jagged Peak"
+        },
+        "76860": {
+            "name": "Abyssal Woods",
+            "subcategory": "Abyssal Woods"
+        },
+        "76861": {
+            "name": "Divided Falls",
+            "subcategory": "Abyssal Woods"
+        },
+        "76862": {
+            "name": "Forsaken Graveyard",
+            "subcategory": "Abyssal Woods"
+        },
+        "76863": {
+            "name": "Woodland Trail",
+            "subcategory": "Abyssal Woods"
+        },
+        "76864": {
+            "name": "Church Ruins",
+            "subcategory": "Abyssal Woods"
+        },
+        "76900": {
+            "name": "Highroad Cross",
+            "subcategory": "Scadu Altus"
+        },
+        "76902": {
+            "name": "Moorth Ruins",
+            "subcategory": "Scadu Altus"
+        },
+        "76903": {
+            "name": "Bonny Village",
+            "subcategory": "Scadu Altus"
+        },
+        "76904": {
+            "name": "Bridge Leading to the Village",
+            "subcategory": "Scadu Altus"
+        },
+        "76905": {
+            "name": "Church District Highroad",
+            "subcategory": "Scadu Altus"
+        },
+        "76906": {
+            "name": "Cathedral of Manus Metyr",
+            "subcategory": "Scadu Altus"
+        },
+        "76907": {
+            "name": "Scadu Altus, West",
+            "subcategory": "Scadu Altus"
+        },
+        "76908": {
+            "name": "Moorth Highway, South",
+            "subcategory": "Scadu Altus"
+        },
+        "76909": {
+            "name": "Fort of Reprimand",
+            "subcategory": "Scadu Altus"
+        },
+        "76910": {
+            "name": "Behind the Fort of Reprimand",
+            "subcategory": "Scadu Altus"
+        },
+        "76911": {
+            "name": "Scaduview Cross",
+            "subcategory": "Scadu Altus"
+        },
+        "76912": {
+            "name": "Ancient Ruins Base",
+            "subcategory": "Rauh Base"
+        },
+        "76913": {
+            "name": "Temple Town Ruins",
+            "subcategory": "Rauh Base"
+        },
+        "76914": {
+            "name": "Ravine North",
+            "subcategory": "Rauh Base"
+        },
+        "76916": {
+            "name": "Castle Watering Hole",
+            "subcategory": "Scadu Altus"
+        },
+        "76917": {
+            "name": "Recluses' River Upstream",
+            "subcategory": "Scadu Altus"
+        },
+        "76918": {
+            "name": "Recluses' River Downstream",
+            "subcategory": "Scadu Altus"
+        },
+        "76930": {
+            "name": "Scaduview",
+            "subcategory": "Scaduview"
+        },
+        "76931": {
+            "name": "Shadow Keep, Back Gate",
+            "subcategory": "Scaduview"
+        },
+        "76935": {
+            "name": "Hinterland",
+            "subcategory": "Scaduview"
+        },
+        "76936": {
+            "name": "Fingerstone Hill",
+            "subcategory": "Scaduview"
+        },
+        "76937": {
+            "name": "Hinterland Bridge",
+            "subcategory": "Scaduview"
+        },
+        "76940": {
+            "name": "Viaduct Minor Tower",
+            "subcategory": "Ancient Ruins of Rauh"
+        },
+        "76941": {
+            "name": "Rauh Ancient Ruins, East",
+            "subcategory": "Ancient Ruins of Rauh"
+        },
+        "76942": {
+            "name": "Rauh Ancient Ruins, West",
+            "subcategory": "Ancient Ruins of Rauh"
+        },
+        "76943": {
+            "name": "Church of the Bud, Main Entrance",
+            "subcategory": "Ancient Ruins of Rauh"
+        },
+        "76944": {
+            "name": "Ancient Ruins, Grand Stairway",
+            "subcategory": "Ancient Ruins of Rauh"
+        },
+        "76945": {
+            "name": "Church of the Bud",
+            "subcategory": "Ancient Ruins of Rauh"
+        },
+        "76960": {
+            "name": "Scadutree Base",
+            "subcategory": "Scaduview"
+        }
+    },
+    "cookbooks": {
+        "68520": {
+            "name": "Forager Brood Cookbook [1]"
+        },
+        "68530": {
+            "name": "Forager Brood Cookbook [2]"
+        },
+        "68540": {
+            "name": "Forager Brood Cookbook [3]"
+        },
+        "68550": {
+            "name": "Forager Brood Cookbook [4]"
+        },
+        "68560": {
+            "name": "Forager Brood Cookbook [5]"
+        },
+        "68510": {
+            "name": "Forager Brood Cookbook [6]"
+        },
+        "68830": {
+            "name": "Forager Brood Cookbook [7]"
+        },
+        "68810": {
+            "name": "Igon's Cookbook [1]"
+        },
+        "68570": {
+            "name": "Igon's Cookbook [2]"
+        },
+        "68920": {
+            "name": "Finger-Weaver's Cookbook [1]"
+        },
+        "68580": {
+            "name": "Finger-Weaver's Cookbook [2]"
+        },
+        "68590": {
+            "name": "Greater Potentate's Cookbook [1]"
+        },
+        "68730": {
+            "name": "Greater Potentate's Cookbook [2]"
+        },
+        "68690": {
+            "name": "Greater Potentate's Cookbook [3]"
+        },
+        "68600": {
+            "name": "Greater Potentate's Cookbook [4]"
+        },
+        "68610": {
+            "name": "Greater Potentate's Cookbook [5]"
+        },
+        "68720": {
+            "name": "Greater Potentate's Cookbook [6]"
+        },
+        "68630": {
+            "name": "Greater Potentate's Cookbook [7]"
+        },
+        "68680": {
+            "name": "Greater Potentate's Cookbook [8]"
+        },
+        "68640": {
+            "name": "Greater Potentate's Cookbook [9]"
+        },
+        "68650": {
+            "name": "Greater Potentate's Cookbook [10]"
+        },
+        "68660": {
+            "name": "Greater Potentate's Cookbook [11]"
+        },
+        "68620": {
+            "name": "Greater Potentate's Cookbook [12]"
+        },
+        "68700": {
+            "name": "Greater Potentate's Cookbook [13]"
+        },
+        "68710": {
+            "name": "Greater Potentate's Cookbook [14]"
+        },
+        "68740": {
+            "name": "Ancient Dragon Knight's Cookbook [1]"
+        },
+        "68780": {
+            "name": "Ancient Dragon Knight's Cookbook [2]"
+        },
+        "68750": {
+            "name": "Mad Craftsman's Cookbook [1]"
+        },
+        "68670": {
+            "name": "Mad Craftsman's Cookbook [2]"
+        },
+        "68880": {
+            "name": "Mad Craftsman's Cookbook [3]"
+        },
+        "68760": {
+            "name": "St. Trina Disciple's Cookbook [1]"
+        },
+        "68950": {
+            "name": "St. Trina Disciple's Cookbook [2]"
+        },
+        "68840": {
+            "name": "St. Trina Disciple's Cookbook [3]"
+        },
+        "68770": {
+            "name": "Fire Knight's Cookbook [1]"
+        },
+        "68900": {
+            "name": "Fire Knight's Cookbook [2]"
+        },
+        "68790": {
+            "name": "Loyal Knight's Cookbook"
+        },
+        "68800": {
+            "name": "Battlefield Priest's Cookbook [1]"
+        },
+        "68820": {
+            "name": "Battlefield Priest's Cookbook [2]"
+        },
+        "68890": {
+            "name": "Battlefield Priest's Cookbook [3]"
+        },
+        "68930": {
+            "name": "Battlefield Priest's Cookbook [4]"
+        },
+        "68940": {
+            "name": "Grave Keeper's Cookbook [1]"
+        },
+        "68850": {
+            "name": "Grave Keeper's Cookbook [2]"
+        },
+        "68910": {
+            "name": "Antiquity Scholar's Cookbook [1]"
+        },
+        "68860": {
+            "name": "Antiquity Scholar's Cookbook [2]"
+        },
+        "68870": {
+            "name": "Tibia's Cookbook"
+        }
+    },
+    "bell_bearings": {
+        "11109790": {
+            "name": "Moore's Bell Bearing"
+        },
+        "11109791": {
+            "name": "Ymir's Bell Bearing"
+        },
+        "11109792": {
+            "name": "Herbalist's Bell Bearing"
+        },
+        "11109793": {
+            "name": "Mushroom-Seller's Bell Bearing [1]"
+        },
+        "11109794": {
+            "name": "Mushroom-Seller's Bell Bearing [2]"
+        },
+        "11109795": {
+            "name": "Greasemonger's Bell Bearing"
+        },
+        "11109796": {
+            "name": "Moldmonger's Bell Bearing"
+        },
+        "11109797": {
+            "name": "Igon's Bell Bearing"
+        },
+        "11109798": {
+            "name": "Spellmachinist Bell Bearing"
+        },
+        "11109799": {
+            "name": "String-seller's Bell Bearing"
+        }
+    },
+    "tools": {
+        "401E8CE6": {
+            "name": "Prattling Pate \"Lamentation\""
+        },
+        "401E9038": {
+            "name": "Bondstone"
+        },
+        "401E90BA": {
+            "name": "Horned Bairn"
+        },
+        "401E90C4": {
+            "name": "Perfumed Oil of Ranah"
+        },
+        "401E8C5A": {
+            "name": "Rock Heart"
+        },
+        "401E8C64": {
+            "name": "Priestess Heart"
+        },
+        "401E8C6E": {
+            "name": "Lamenter's Mask"
+        }
+    },
+    "gestures": {
+        "401EA7A8": {
+            "name": "Ring of Miquella"
+        },
+        "401EA7A9": {
+            "name": "May the Best Win"
+        },
+        "401EA7AA": {
+            "name": "The Two Fingers"
+        },
+        "401EA7AB": {
+            "name": "Let Us Go Together"
+        },
+        "401EA7AC": {
+            "name": "O Mother"
+        }
+    },
+    "crystal_tears": {
+        "401EAF78": {
+            "name": "Viridian Hidden Tear"
+        },
+        "401EAF82": {
+            "name": "Crimsonburst Dried Tear"
+        },
+        "401EAF8C": {
+            "name": "Crimson-Sapping Cracked Tear"
+        },
+        "401EAF96": {
+            "name": "Cerulean-Sapping Cracked Tear"
+        },
+        "401EAFA0": {
+            "name": "Oil-Soaked Tear"
+        },
+        "401EAFAA": {
+            "name": "Bloodsucking Cracked Tear"
+        },
+        "401EAFB4": {
+            "name": "Glovewort Crystal Tear"
+        },
+        "401EAFBE": {
+            "name": "Deflecting Hardtear"
+        }
+    },
+    "not-found": {
+        "WHY": "Grand Archives don't have IDs for these ones",
+        "bosses": [
+            "Leda and Allies",
+            "Tibia Mariner (Charo's Hidden Grave)"
+        ]
     }
 }

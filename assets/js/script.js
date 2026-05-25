@@ -87,17 +87,6 @@ function getJsonFiles() {
       });
     }
 
-    if ($("#dlc-items").is(":checked")) {
-      fetchJson("assets/json/dlc_items.json", function (data2) {
-        all_items.armament = { ...all_items.armament, ...data2.armament };
-        all_items.armor = { ...all_items.armor, ...data2.armor };
-        all_items.talisman = { ...all_items.talisman, ...data2.talisman };
-        all_items.ashesOfWar = { ...all_items.ashesOfWar, ...data2.ashesOfWar };
-        all_items.magic = { ...all_items.magic, ...data2.magic };
-        all_items.spiritAshes = { ...all_items.spiritAshes, ...data2.spiritAshes };
-      });
-    }
-
     // Load bosses.json
     fetchJson("assets/json/bosses.json", function (data) {
       all_items.bosses = { ...data.bosses };
@@ -123,6 +112,25 @@ function getJsonFiles() {
     fetchJson("assets/json/crystal_tears.json", function (data) {
       all_items.crystal_tears = { ...data.crystal_tears };
     });
+
+    if ($("#dlc-items").is(":checked")) {
+      fetchJson("assets/json/dlc_items.json", function (data2) {
+        all_items.armament = { ...all_items.armament, ...data2.armament };
+        all_items.armor = { ...all_items.armor, ...data2.armor };
+        all_items.talisman = { ...all_items.talisman, ...data2.talisman };
+        all_items.ashesOfWar = { ...all_items.ashesOfWar, ...data2.ashesOfWar };
+        all_items.magic = { ...all_items.magic, ...data2.magic };
+        all_items.spiritAshes = { ...all_items.spiritAshes, ...data2.spiritAshes };
+        all_items.bosses = { ...all_items.bosses, ...data2.bosses };
+        all_items.graces = { ...all_items.graces, ...data2.graces };
+        all_items.cookbooks = { ...all_items.cookbooks, ...data2.cookbooks };
+        all_items.bell_bearings = { ...all_items.bell_bearings, ...data2.bell_bearings };
+        all_items.whetblades = { ...all_items.whetblades, ...data2.whetblades };
+        all_items.tools = { ...all_items.tools, ...data2.tools };
+        all_items.gestures = { ...all_items.gestures, ...data2.gestures };
+        all_items.crystal_tears = { ...all_items.crystal_tears, ...data2.crystal_tears };
+      });
+    }
   });
 
 

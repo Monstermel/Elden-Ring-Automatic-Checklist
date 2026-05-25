@@ -1,29 +1,5 @@
 {
     "cookbooks": {
-        "60120": {
-            "name": "Crafting Unlocked"
-        },
-        "67610": {
-            "name": "Missionary's Cookbook [1]"
-        },
-        "67600": {
-            "name": "Missionary's Cookbook [2]"
-        },
-        "67650": {
-            "name": "Missionary's Cookbook [3]"
-        },
-        "67640": {
-            "name": "Missionary's Cookbook [4]"
-        },
-        "67630": {
-            "name": "Missionary's Cookbook [5]"
-        },
-        "67130": {
-            "name": "Missionary's Cookbook [6]"
-        },
-        "68230": {
-            "name": "Missionary's Cookbook [7]"
-        },
         "67000": {
             "name": "Nomadic warrior's Cookbook [1]"
         },
@@ -117,39 +93,6 @@
         "67250": {
             "name": "Armorer's Cookbook [7]"
         },
-        "68000": {
-            "name": "Ancient Dragon Apostle's Cookbook [1]"
-        },
-        "68010": {
-            "name": "Ancient Dragon Apostle's Cookbook [2]"
-        },
-        "68030": {
-            "name": "Ancient Dragon Apostle's Cookbook [3]"
-        },
-        "68020": {
-            "name": "Ancient Dragon Apostle's Cookbook [4]"
-        },
-        "68200": {
-            "name": "Fevor's Cookbook [1]"
-        },
-        "68220": {
-            "name": "Fevor's Cookbook [2]"
-        },
-        "68210": {
-            "name": "Fevor's Cookbook [3]"
-        },
-        "67840": {
-            "name": "Perfumer's Cookbook [1]"
-        },
-        "67850": {
-            "name": "Perfumer's Cookbook [2]"
-        },
-        "67860": {
-            "name": "Perfumer's Cookbook [3]"
-        },
-        "67920": {
-            "name": "Perfumer's Cookbook [4]"
-        },
         "67410": {
             "name": "Glintstone Craftsman's Cookbook [1]"
         },
@@ -174,146 +117,65 @@
         "67440": {
             "name": "Glintstone Craftsman's Cookbook [8]"
         },
+        "67610": {
+            "name": "Missionary's Cookbook [1]"
+        },
+        "67600": {
+            "name": "Missionary's Cookbook [2]"
+        },
+        "67650": {
+            "name": "Missionary's Cookbook [3]"
+        },
+        "67640": {
+            "name": "Missionary's Cookbook [4]"
+        },
+        "67630": {
+            "name": "Missionary's Cookbook [5]"
+        },
+        "67130": {
+            "name": "Missionary's Cookbook [6]"
+        },
+        "68230": {
+            "name": "Missionary's Cookbook [7]"
+        },
+        "68000": {
+            "name": "Ancient Dragon Apostle's Cookbook [1]"
+        },
+        "68010": {
+            "name": "Ancient Dragon Apostle's Cookbook [2]"
+        },
+        "68030": {
+            "name": "Ancient Dragon Apostle's Cookbook [3]"
+        },
+        "68020": {
+            "name": "Ancient Dragon Apostle's Cookbook [4]"
+        },
+        "67840": {
+            "name": "Perfumer's Cookbook [1]"
+        },
+        "67850": {
+            "name": "Perfumer's Cookbook [2]"
+        },
+        "67860": {
+            "name": "Perfumer's Cookbook [3]"
+        },
+        "67920": {
+            "name": "Perfumer's Cookbook [4]"
+        },
+        "68200": {
+            "name": "Fevor's Cookbook [1]"
+        },
+        "68220": {
+            "name": "Fevor's Cookbook [2]"
+        },
+        "68210": {
+            "name": "Fevor's Cookbook [3]"
+        },
         "68400": {
             "name": "Frenzied's Cookbook [1]"
         },
         "68410": {
             "name": "Frenzied's Cookbook [2]"
-        },
-        "68590": {
-            "name": "Greater Potentate's Cookbook [1]"
-        },
-        "68730": {
-            "name": "Greater Potentate's Cookbook [2]"
-        },
-        "68690": {
-            "name": "Greater Potentate's Cookbook [3]"
-        },
-        "68600": {
-            "name": "Greater Potentate's Cookbook [4]"
-        },
-        "68610": {
-            "name": "Greater Potentate's Cookbook [5]"
-        },
-        "68720": {
-            "name": "Greater Potentate's Cookbook [6]"
-        },
-        "68630": {
-            "name": "Greater Potentate's Cookbook [7]"
-        },
-        "68680": {
-            "name": "Greater Potentate's Cookbook [8]"
-        },
-        "68640": {
-            "name": "Greater Potentate's Cookbook [9]"
-        },
-        "68650": {
-            "name": "Greater Potentate's Cookbook [10]"
-        },
-        "68660": {
-            "name": "Greater Potentate's Cookbook [11]"
-        },
-        "68620": {
-            "name": "Greater Potentate's Cookbook [12]"
-        },
-        "68700": {
-            "name": "Greater Potentate's Cookbook [13]"
-        },
-        "68710": {
-            "name": "Greater Potentate's Cookbook [14]"
-        },
-        "68750": {
-            "name": "Mad Craftsman's Cookbook [1]"
-        },
-        "68670": {
-            "name": "Mad Craftsman's Cookbook [2]"
-        },
-        "68880": {
-            "name": "Mad Craftsman's Cookbook [3]"
-        },
-        "68740": {
-            "name": "Ancient Dragon Knight's Cookbook [1]"
-        },
-        "68780": {
-            "name": "Ancient Dragon Knight's Cookbook [2]"
-        },
-        "68760": {
-            "name": "St. Trina Disciple's Cookbook [1]"
-        },
-        "68950": {
-            "name": "St. Trina Disciple's Cookbook [2]"
-        },
-        "68840": {
-            "name": "St. Trina Disciple's Cookbook [3]"
-        },
-        "68520": {
-            "name": "Forager Brood Cookbook [1]"
-        },
-        "68530": {
-            "name": "Forager Brood Cookbook [2]"
-        },
-        "68540": {
-            "name": "Forager Brood Cookbook [3]"
-        },
-        "68550": {
-            "name": "Forager Brood Cookbook [4]"
-        },
-        "68560": {
-            "name": "Forager Brood Cookbook [5]"
-        },
-        "68510": {
-            "name": "Forager Brood Cookbook [6]"
-        },
-        "68830": {
-            "name": "Forager Brood Cookbook [7]"
-        },
-        "68810": {
-            "name": "Igon's Cookbook [1]"
-        },
-        "68570": {
-            "name": "Igon's Cookbook [2]"
-        },
-        "68920": {
-            "name": "Finger-Weaver's Cookbook [1]"
-        },
-        "68580": {
-            "name": "Finger-Weaver's Cookbook [2]"
-        },
-        "68770": {
-            "name": "Fire Knight's Cookbook [1]"
-        },
-        "68900": {
-            "name": "Fire Knight's Cookbook [2]"
-        },
-        "68800": {
-            "name": "Battlefield Priest's Cookbook [1]"
-        },
-        "68820": {
-            "name": "Battlefield Priest's Cookbook [2]"
-        },
-        "68890": {
-            "name": "Battlefield Priest's Cookbook [3]"
-        },
-        "68930": {
-            "name": "Battlefield Priest's Cookbook [4]"
-        },
-        "68940": {
-            "name": "Grave Keeper's Cookbook [1]"
-        },
-        "68850": {
-            "name": "Grave Keeper's Cookbook [2]"
-        },
-        "68910": {
-            "name": "Antiquity Scholar's Cookbook [1]"
-        },
-        "68860": {
-            "name": "Antiquity Scholar's Cookbook [2]"
-        },
-        "68870": {
-            "name": "Tibia's Cookbook"
-        },
-        "68790": {
-            "name": "Loyal Knight's Cookbook"
         }
     }
 }

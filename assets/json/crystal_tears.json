@@ -9,7 +9,13 @@
         "40002AFA": {
             "name": "Crimson Crystal Tear"
         },
+        "40002AFB": {
+            "name": "Crimson Crystal Tear"
+        },
         "40002AFC": {
+            "name": "Cerulean Crystal Tear"
+        },
+        "40002AFD": {
             "name": "Cerulean Crystal Tear"
         },
         "40002AFE": {
@@ -43,6 +49,9 @@
             "name": "Windy Crystal Tear"
         },
         "40002B08": {
+            "name": "Ruptured Crystal Tear"
+        },
+        "40002B09": {
             "name": "Ruptured Crystal Tear"
         },
         "40002B0A": {
@@ -86,30 +95,6 @@
         },
         "40002B17": {
             "name": "Holy-Shrouding Cracked Tear"
-        },
-        "401EAF78": {
-            "name": "Viridian Hidden Tear"
-        },
-        "401EAF82": {
-            "name": "Crimsonburst Dried Tear"
-        },
-        "401EAF8C": {
-            "name": "Crimson-Sapping Cracked Tear"
-        },
-        "401EAF96": {
-            "name": "Cerulean-Sapping Cracked Tear"
-        },
-        "401EAFA0": {
-            "name": "Oil-Soaked Tear"
-        },
-        "401EAFAA": {
-            "name": "Bloodsucking Cracked Tear"
-        },
-        "401EAFB4": {
-            "name": "Glovewort Crystal Tear"
-        },
-        "401EAFBE": {
-            "name": "Deflecting Hardtear"
         }
     }
 }

@@ -6,47 +6,8 @@
         "40000082": {
             "name": "Spectral Steed Whistle"
         },
-        "400007F8": {
-            "name": "Telescope"
-        },
-        "40000816": {
-            "name": "Lantern"
-        },
-        "40000820": {
-            "name": "Blasphemous Claw"
-        },
-        "4000085C": {
-            "name": "Margit's Shackle"
-        },
-        "40000866": {
-            "name": "Mohg's Shackle"
-        },
-        "40000870": {
-            "name": "Pureblood Knight's Medal"
-        },
-        "40000898": {
-            "name": "Prattling Pate \"Hello\""
-        },
-        "40000899": {
-            "name": "Prattling Pate \"Thank you\""
-        },
-        "4000089A": {
-            "name": "Prattling Pate \"Apologies\""
-        },
-        "4000089B": {
-            "name": "Prattling Pate \"Wonderful\""
-        },
-        "4000089C": {
-            "name": "Prattling Pate \"Please Help\""
-        },
-        "4000089D": {
-            "name": "Prattling Pate \"My Beloved\""
-        },
-        "4000089E": {
-            "name": "Prattling Pate \"Let's get to it\""
-        },
-        "4000089F": {
-            "name": "Prattling Pate \"You're Beautiful\""
+        "40000C08": {
+            "name": "Wraith Calling Bell"
         },
         "40000BB8": {
             "name": "Ancestral Infant's Head"
@@ -60,29 +21,47 @@
         "40000BE0": {
             "name": "Mimic's Veil"
         },
-        "40000C08": {
-            "name": "Wraith Calling Bell"
+        "4000085C": {
+            "name": "Margit's Shackle"
         },
-        "401E8C5A": {
-            "name": "Rock Heart"
+        "40000866": {
+            "name": "Mohg's Shackle"
         },
-        "401E8C64": {
-            "name": "Priestess Heart"
+        "40000816": {
+            "name": "Lantern"
         },
-        "401E8C6E": {
-            "name": "Lamenter's Mask"
+        "400007F8": {
+            "name": "Telescope"
         },
-        "401E8CE6": {
-            "name": "Prattling Pate \"Lamentation\""
+        "40000820": {
+            "name": "Blasphemous Claw"
         },
-        "401E9038": {
-            "name": "Bondstone"
+        "40000898": {
+            "name": "Prattling Pate \"Hello\""
         },
-        "401E90BA": {
-            "name": "Horned Bairn"
+        "40000899": {
+            "name": "Prattling Pate \"Thank you\""
         },
-        "401E90C4": {
-            "name": "Perfumed Oil of Ranah"
+        "4000089C": {
+            "name": "Prattling Pate \"Please Help\""
+        },
+        "4000089A": {
+            "name": "Prattling Pate \"Apologies\""
+        },
+        "4000089F": {
+            "name": "Prattling Pate \"You're Beautiful\""
+        },
+        "4000089B": {
+            "name": "Prattling Pate \"Wonderful\""
+        },
+        "4000089E": {
+            "name": "Prattling Pate \"Let's get to it\""
+        },
+        "4000089D": {
+            "name": "Prattling Pate \"My Beloved\""
+        },
+        "40000870": {
+            "name": "Pureblood Knight's Medal"
         }
     }
 }
