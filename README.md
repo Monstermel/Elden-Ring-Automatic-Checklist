@@ -54,8 +54,6 @@ With this tool you can:
 I planned to add some features:
 
 - Make a section in which armors are divided according to their [armor set](https://eldenring.wiki.fextralife.com/Armor)
-- Add option to show missing [key items](https://eldenring.wiki.fextralife.com/Items)
-- Add option to show missing [bosses](https://eldenring.wiki.fextralife.com/Bosses)
 
 If you would like to support me this is the button :heart:
 
