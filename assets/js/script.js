@@ -495,6 +495,12 @@ function updateSlotDropdown(slot_name_list) {
 }
 
 function getCard(item_name, category_name) {
+  let url;
+  if (category_name === "gestures") {
+    url = "https://eldenring.wiki.fextralife.com/Gestures";
+  } else {
+    url = `https://eldenring.wiki.fextralife.com/${item_name.replace(/ \+\d+$/, "").replace(/\[(\d+)\]/g, "($1)").replaceAll(" ", "+")}`;
+  }
   return `<div class=".col-6 .col-sm-4 .col-md-3 .col-lg-2 col-xl-2">
 <div class="card" title="${item_name}" > 
 <img alt="${item_name} img" class="lazy item-img card-img"
@@ -503,7 +509,7 @@ function getCard(item_name, category_name) {
 					 title="${item_name}">
 <br>
 <p class="card-text">${item_name}</p>
-<a href="https://eldenring.wiki.fextralife.com/${item_name.replace(/ \+\d+$/, "").replace(/\[(\d+)\]/g, "($1)").replaceAll(" ", "+")}" class="stretched-link" target="_blank"> </a> </div>
+<a href="${url}" class="stretched-link" target="_blank"> </a> </div>
 </div>`;
 }
 
@@ -512,6 +518,16 @@ function getGraceCard(item_name) {
 <div class="card grace-card" title="${item_name}">
 <p class="card-text">${item_name}</p>
 <a href="https://eldenring.wiki.fextralife.com/Sites+of+Grace" class="stretched-link" target="_blank"> </a> </div>
+</div>`;
+}
+
+function getBossCard(item_name) {
+  let base_name = item_name.replace(/\s*\(.*\)\s*$/, "").trim();
+  let url = `https://eldenring.wiki.fextralife.com/${base_name.replace(/ \+\d+$/, "").replace(/\[(\d+)\]/g, "($1)").replaceAll(" ", "+")}`;
+  return `<div class=".col-6 .col-sm-4 .col-md-3 .col-lg-2 col-xl-2">
+<div class="card grace-card" title="${item_name}">
+<p class="card-text">${item_name}</p>
+<a href="${url}" class="stretched-link" target="_blank"> </a> </div>
 </div>`;
 }
 
@@ -535,9 +551,15 @@ function getCategorySection(category, owned) {
         category_container.innerHTML += `<div class="row-flex">`;
         let category_row = category_container.getElementsByClassName(`row-flex`)[i];
         for (let i in result[owned][category][type]) {
-          category_row.innerHTML += category === "graces"
-            ? getGraceCard(result[owned][category][type][i])
-            : getCard(result[owned][category][type][i], category);
+          let cardHtml;
+          if (category === "graces") {
+            cardHtml = getGraceCard(result[owned][category][type][i]);
+          } else if (category === "bosses") {
+            cardHtml = getBossCard(result[owned][category][type][i]);
+          } else {
+            cardHtml = getCard(result[owned][category][type][i], category);
+          }
+          category_row.innerHTML += cardHtml;
         }
         i++;
       }
@@ -545,7 +567,15 @@ function getCategorySection(category, owned) {
       category_container.innerHTML += `<div class="row-flex">`;
       let category_row = category_container.getElementsByClassName(`row-flex`)[0];
       for (let i in result[owned][category]) {
-        category_row.innerHTML += getCard(result[owned][category][i], category);
+        let cardHtml;
+        if (category === "graces") {
+          cardHtml = getGraceCard(result[owned][category][i]);
+        } else if (category === "bosses") {
+          cardHtml = getBossCard(result[owned][category][i]);
+        } else {
+          cardHtml = getCard(result[owned][category][i], category);
+        }
+        category_row.innerHTML += cardHtml;
       }
     }
   }
