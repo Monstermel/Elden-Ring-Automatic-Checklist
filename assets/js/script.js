@@ -550,14 +550,15 @@ function getCategorySection(category, owned) {
 
         category_container.innerHTML += `<div class="row-flex">`;
         let category_row = category_container.getElementsByClassName(`row-flex`)[i];
-        for (let i in result[owned][category][type]) {
+        let items = [...result[owned][category][type]].sort((a, b) => a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'}));
+        for (let item of items) {
           let cardHtml;
           if (category === "graces") {
-            cardHtml = getGraceCard(result[owned][category][type][i]);
+            cardHtml = getGraceCard(item);
           } else if (category === "bosses") {
-            cardHtml = getBossCard(result[owned][category][type][i]);
+            cardHtml = getBossCard(item);
           } else {
-            cardHtml = getCard(result[owned][category][type][i], category);
+            cardHtml = getCard(item, category);
           }
           category_row.innerHTML += cardHtml;
         }
@@ -566,14 +567,15 @@ function getCategorySection(category, owned) {
     } else {
       category_container.innerHTML += `<div class="row-flex">`;
       let category_row = category_container.getElementsByClassName(`row-flex`)[0];
-      for (let i in result[owned][category]) {
+      let items = [...result[owned][category]].sort((a, b) => a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'}));
+      for (let item of items) {
         let cardHtml;
         if (category === "graces") {
-          cardHtml = getGraceCard(result[owned][category][i]);
+          cardHtml = getGraceCard(item);
         } else if (category === "bosses") {
-          cardHtml = getBossCard(result[owned][category][i]);
+          cardHtml = getBossCard(item);
         } else {
-          cardHtml = getCard(result[owned][category][i], category);
+          cardHtml = getCard(item, category);
         }
         category_row.innerHTML += cardHtml;
       }
