@@ -494,17 +494,19 @@ function updateSlotDropdown(slot_name_list) {
   select.style.display = "block";
 }
 
+function normalizeWikiName(itemName, stripUpgrade = true) {
+  let normalized = itemName;
+  if (stripUpgrade) {
+    normalized = normalized.replace(/ \+\d+$/, ""); // Remove "+10", "+25", etc.
+  }
+  return normalized.replace(/\[(\d+)\]/g, "($1)").replace(/ /g, "+");
+}
+
 function getCardMetadata(itemName, categoryName) {
   const BASE_URL = "https://eldenring.wiki.fextralife.com";
 
   let cardClass = "card";
   let url = "";
-
-  // Normalize name for standard wiki URLs
-  let normalizedName = categoryName === "talisman"
-    ? itemName
-    : itemName.replace(/ \+\d+$/, ""); // Remove "+10", "+25", etc.
-  normalizedName = normalizedName.replace(/\[(\d+)\]/g, "($1)").replaceAll(" ", "+");
 
   // Handle category-specific URL and styling logic
   switch (categoryName) {
@@ -519,18 +521,16 @@ function getCardMetadata(itemName, categoryName) {
 
     case "bosses": {
       cardClass += " grace-card";
-      const baseBossName = itemName
-        .replace(/\s*\(.*\)\s*$/, "") // Remove trailing parentheses like " (Caelid)"
-        .trim()
-        .replace(/\[(\d+)\]/g, "($1)")
-        .replaceAll(" ", "+");
+      const baseBossName = normalizeWikiName(itemName.replace(/\s*\(.*\)\s*$/, "").trim());
       url = `${BASE_URL}/${baseBossName}`;
       break;
     }
 
-    default:
+    default: {
+      const normalizedName = normalizeWikiName(itemName, categoryName !== "talisman");
       url = `${BASE_URL}/${normalizedName}`;
       break;
+    }
   }
 
   return { url, cardClass };
