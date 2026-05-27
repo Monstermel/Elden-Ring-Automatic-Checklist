@@ -494,6 +494,8 @@ function updateSlotDropdown(slot_name_list) {
   select.style.display = "block";
 }
 
+// TODO: Move eveything in a single getCard method and handle branches there
+
 function getCard(item_name, category_name) {
   let url;
   if (category_name === "gestures") {
@@ -550,7 +552,7 @@ function getCategorySection(category, owned) {
 
         category_container.innerHTML += `<div class="row-flex">`;
         let category_row = category_container.getElementsByClassName(`row-flex`)[i];
-        let items = [...result[owned][category][type]].sort((a, b) => a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'}));
+        let items = [...result[owned][category][type]].sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
         for (let item of items) {
           let cardHtml;
           if (category === "graces") {
@@ -567,7 +569,7 @@ function getCategorySection(category, owned) {
     } else {
       category_container.innerHTML += `<div class="row-flex">`;
       let category_row = category_container.getElementsByClassName(`row-flex`)[0];
-      let items = [...result[owned][category]].sort((a, b) => a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'}));
+      let items = [...result[owned][category]].sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
       for (let item of items) {
         let cardHtml;
         if (category === "graces") {
