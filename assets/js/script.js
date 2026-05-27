@@ -494,40 +494,42 @@ function updateSlotDropdown(slot_name_list) {
   select.style.display = "block";
 }
 
-// TODO: Move eveything in a single getCard method and handle branches there
-
-function getCard(item_name, category_name) {
+function getCard(item_name, category_name = "") {
   let url;
+  let cardClass = "card";
+  let imgHtml = "";
+
+  // 1. Determine the URL and Card Style based on category
   if (category_name === "gestures") {
     url = "https://eldenring.wiki.fextralife.com/Gestures";
+  } else if (category_name === "graces") {
+    cardClass = "card grace-card";
+    url = "https://eldenring.wiki.fextralife.com/Sites+of+Grace";
+  } else if (category_name === "bosses") {
+    cardClass = "card grace-card"; // Reusing the grace-card style as per your original getBossCard
+    let base_name = item_name.replace(/\s*\(.*\)\s*$/, "").trim();
+    url = `https://eldenring.wiki.fextralife.com/${base_name.replace(/ \+\d+$/, "").replace(/\[(\d+)\]/g, "($1)").replaceAll(" ", "+")}`;
+  } else if (category_name === "talisman") {
+    url = `https://eldenring.wiki.fextralife.com/${item_name.replace(/\[(\d+)\]/g, "($1)").replaceAll(" ", "+")}`;
   } else {
+    // Default item URL logic
     url = `https://eldenring.wiki.fextralife.com/${item_name.replace(/ \+\d+$/, "").replace(/\[(\d+)\]/g, "($1)").replaceAll(" ", "+")}`;
   }
-  return `<div class=".col-6 .col-sm-4 .col-md-3 .col-lg-2 col-xl-2">
-<div class="card" title="${item_name}" > 
+
+  // 2. Only build the image HTML if it's NOT a boss or a grace
+  if (category_name !== "graces" && category_name !== "bosses") {
+    const cleanImgName = item_name.replace(/[\:\?\"\*\|\<\>\\\/]+/g, "");
+    imgHtml = `
 <img alt="${item_name} img" class="lazy item-img card-img"
-           src="https://acegif.com/wp-content/uploads/loading-25.gif"
-					 data-src="./assets/img/${category_name}/${item_name.replace(/[\:\?\"\*\|\<\>\\\/]+/g, "")}.webp"
-					 title="${item_name}">
-<br>
-<p class="card-text">${item_name}</p>
-<a href="${url}" class="stretched-link" target="_blank"> </a> </div>
-</div>`;
-}
+     src="https://acegif.com/wp-content/uploads/loading-25.gif"
+     data-src="./assets/img/${category_name}/${cleanImgName}.webp"
+     title="${item_name}">
+<br>`;
+  }
 
-function getGraceCard(item_name) {
+  // 3. Return the uniform HTML template
   return `<div class=".col-6 .col-sm-4 .col-md-3 .col-lg-2 col-xl-2">
-<div class="card grace-card" title="${item_name}">
-<p class="card-text">${item_name}</p>
-<a href="https://eldenring.wiki.fextralife.com/Sites+of+Grace" class="stretched-link" target="_blank"> </a> </div>
-</div>`;
-}
-
-function getBossCard(item_name) {
-  let base_name = item_name.replace(/\s*\(.*\)\s*$/, "").trim();
-  let url = `https://eldenring.wiki.fextralife.com/${base_name.replace(/ \+\d+$/, "").replace(/\[(\d+)\]/g, "($1)").replaceAll(" ", "+")}`;
-  return `<div class=".col-6 .col-sm-4 .col-md-3 .col-lg-2 col-xl-2">
-<div class="card grace-card" title="${item_name}">
+<div class="${cardClass}" title="${item_name}" > ${imgHtml}
 <p class="card-text">${item_name}</p>
 <a href="${url}" class="stretched-link" target="_blank"> </a> </div>
 </div>`;
@@ -554,15 +556,7 @@ function getCategorySection(category, owned) {
         let category_row = category_container.getElementsByClassName(`row-flex`)[i];
         let items = [...result[owned][category][type]].sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
         for (let item of items) {
-          let cardHtml;
-          if (category === "graces") {
-            cardHtml = getGraceCard(item);
-          } else if (category === "bosses") {
-            cardHtml = getBossCard(item);
-          } else {
-            cardHtml = getCard(item, category);
-          }
-          category_row.innerHTML += cardHtml;
+          category_row.innerHTML += getCard(item, category);
         }
         i++;
       }
@@ -571,15 +565,7 @@ function getCategorySection(category, owned) {
       let category_row = category_container.getElementsByClassName(`row-flex`)[0];
       let items = [...result[owned][category]].sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
       for (let item of items) {
-        let cardHtml;
-        if (category === "graces") {
-          cardHtml = getGraceCard(item);
-        } else if (category === "bosses") {
-          cardHtml = getBossCard(item);
-        } else {
-          cardHtml = getCard(item, category);
-        }
-        category_row.innerHTML += cardHtml;
+        category_row.innerHTML += getCard(item, category);
       }
     }
   }
