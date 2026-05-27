@@ -494,45 +494,77 @@ function updateSlotDropdown(slot_name_list) {
   select.style.display = "block";
 }
 
-function getCard(item_name, category_name = "") {
-  let url;
+function getCardMetadata(itemName, categoryName) {
+  const BASE_URL = "https://eldenring.wiki.fextralife.com";
+
   let cardClass = "card";
-  let imgHtml = "";
+  let url = "";
 
-  // 1. Determine the URL and Card Style based on category
-  if (category_name === "gestures") {
-    url = "https://eldenring.wiki.fextralife.com/Gestures";
-  } else if (category_name === "graces") {
-    cardClass = "card grace-card";
-    url = "https://eldenring.wiki.fextralife.com/Sites+of+Grace";
-  } else if (category_name === "bosses") {
-    cardClass = "card grace-card"; // Reusing the grace-card style as per your original getBossCard
-    let base_name = item_name.replace(/\s*\(.*\)\s*$/, "").trim();
-    url = `https://eldenring.wiki.fextralife.com/${base_name.replace(/ \+\d+$/, "").replace(/\[(\d+)\]/g, "($1)").replaceAll(" ", "+")}`;
-  } else if (category_name === "talisman") {
-    url = `https://eldenring.wiki.fextralife.com/${item_name.replace(/\[(\d+)\]/g, "($1)").replaceAll(" ", "+")}`;
-  } else {
-    // Default item URL logic
-    url = `https://eldenring.wiki.fextralife.com/${item_name.replace(/ \+\d+$/, "").replace(/\[(\d+)\]/g, "($1)").replaceAll(" ", "+")}`;
+  // Normalize name for standard wiki URLs
+  let normalizedName = categoryName === "talisman"
+    ? itemName
+    : itemName.replace(/ \+\d+$/, ""); // Remove "+10", "+25", etc.
+  normalizedName = normalizedName.replace(/\[(\d+)\]/g, "($1)").replaceAll(" ", "+");
+
+  // Handle category-specific URL and styling logic
+  switch (categoryName) {
+    case "gestures":
+      url = `${BASE_URL}/Gestures`;
+      break;
+
+    case "graces":
+      cardClass += " grace-card";
+      url = `${BASE_URL}/Sites+of+Grace`;
+      break;
+
+    case "bosses": {
+      cardClass += " grace-card";
+      const baseBossName = itemName
+        .replace(/\s*\(.*\)\s*$/, "") // Remove trailing parentheses like " (Caelid)"
+        .trim()
+        .replace(/\[(\d+)\]/g, "($1)")
+        .replaceAll(" ", "+");
+      url = `${BASE_URL}/${baseBossName}`;
+      break;
+    }
+
+    default:
+      url = `${BASE_URL}/${normalizedName}`;
+      break;
   }
 
-  // 2. Only build the image HTML if it's NOT a boss or a grace
-  if (category_name !== "graces" && category_name !== "bosses") {
-    const cleanImgName = item_name.replace(/[\:\?\"\*\|\<\>\\\/]+/g, "");
-    imgHtml = `
-<img alt="${item_name} img" class="lazy item-img card-img"
-     src="https://acegif.com/wp-content/uploads/loading-25.gif"
-     data-src="./assets/img/${category_name}/${cleanImgName}.webp"
-     title="${item_name}">
-<br>`;
+  return { url, cardClass };
+}
+
+function createImageHtml(itemName, categoryName) {
+  const skipImageCategories = ["graces", "bosses"];
+  if (skipImageCategories.includes(categoryName)) {
+    return "";
   }
 
-  // 3. Return the uniform HTML template
-  return `<div class=".col-6 .col-sm-4 .col-md-3 .col-lg-2 col-xl-2">
-<div class="${cardClass}" title="${item_name}" > ${imgHtml}
-<p class="card-text">${item_name}</p>
-<a href="${url}" class="stretched-link" target="_blank"> </a> </div>
-</div>`;
+  // Strip invalid file name characters
+  const cleanImgName = itemName.replace(/[:?"*|<>\\/]+/g, "");
+
+  return `
+    <img alt="${itemName} img" class="lazy item-img card-img"
+         src="https://acegif.com/wp-content/uploads/loading-25.gif"
+         data-src="./assets/img/${categoryName}/${cleanImgName}.webp"
+         title="${itemName}">
+    <br>`.trim();
+}
+
+function getCard(itemName, categoryName = "") {
+  const { url, cardClass } = getCardMetadata(itemName, categoryName);
+  const imgHtml = createImageHtml(itemName, categoryName);
+
+  return `
+    <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+      <div class="${cardClass}" title="${itemName}">
+        ${imgHtml}
+        <p class="card-text">${itemName}</p>
+        <a href="${url}" class="stretched-link" target="_blank"></a>
+      </div>
+    </div>`.trim();
 }
 
 function getCategorySection(category, owned) {
