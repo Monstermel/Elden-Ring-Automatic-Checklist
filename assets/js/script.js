@@ -315,145 +315,127 @@ function decimalToHex(d, padding) {
   return hex;
 }
 
-function getOwnedAndNot(file_read, selected_slot) {
-  try {
-    let saves_array = new Uint8Array(file_read);
-    let slot = get_slot_ls(saves_array)[selected_slot];
-    let inventory = Array.from(getInventory(slot));
-    let event_flags = getEventFlags(slot);
-    let id_list = split(inventory, isDlcFile ? 8 : 16)
-    id_list.forEach((raw_id, index) => (id_list[index] = getIdReversed(raw_id).toUpperCase()));
+const inventoryCategories = {
+  armament: { nested: true, subcatKey: "class" },
+  armor: { nested: true, subcatKey: "category" },
+  ashesOfWar: { nested: true, subcatKey: "category" },
+  magic: { nested: true, subcatKey: "category" },
+  spiritAshes: { nested: false },
+  talisman: { nested: false },
+  tools: { nested: false },
+  gestures: { nested: false },
+  crystal_tears: { nested: false }
+};
 
-    let owned_items = JSON.parse(JSON.stringify(item_dict_template));
-    let not_owned_items = JSON.parse(JSON.stringify(item_dict_template));
+function parseSlotData(file_read, selected_slot) {
+  const saves_array = new Uint8Array(file_read);
+  const slot = get_slot_ls(saves_array)[selected_slot];
+  const inventory = Array.from(getInventory(slot));
+  const event_flags = getEventFlags(slot);
+  const id_list = split(inventory, isDlcFile ? 8 : 16)
+    .map((raw_id) => getIdReversed(raw_id).toUpperCase());
+  return { event_flags, id_list };
+}
 
-    const processFlags = (category, isGrouped = false) => {
-      if (!all_items[category]) return;
-      Object.keys(all_items[category]).forEach((flag_id) => {
-        let event_id = parseInt(flag_id);
-        let block_id = Math.floor(event_id / 1000);
+function processFlags(category, event_flags, owned_items, not_owned_items, isGrouped = false) {
+  if (!all_items[category]) return;
+  Object.keys(all_items[category]).forEach((flag_id) => {
+    const event_id = parseInt(flag_id);
+    const block_id = Math.floor(event_id / 1000);
 
-        let bst_val = eventflag_bst_map[block_id];
-        if (bst_val === undefined) {
-          console.warn(`Missing BST entry for block_id: ${block_id} (event_id: ${event_id})`);
-          return;
-        }
+    const bst_val = eventflag_bst_map[block_id];
+    if (bst_val === undefined) {
+      console.warn(`Missing BST entry for block_id: ${block_id} (event_id: ${event_id})`);
+      return;
+    }
 
-        let block_offset = bst_val * 125 + Math.floor((event_id % 1000) / 8);
-        let bit_index = 7 - (event_id % 8);
+    const block_offset = bst_val * 125 + Math.floor((event_id % 1000) / 8);
+    const bit_index = 7 - (event_id % 8);
 
-        let item = all_items[category][flag_id];
-        let byte = event_flags[block_offset];
+    const item = all_items[category][flag_id];
+    const byte = event_flags[block_offset];
 
-        let owned = (byte & (1 << bit_index)) !== 0;
-        let target = owned ? owned_items : not_owned_items;
+    const owned = (byte & (1 << bit_index)) !== 0;
+    const target = owned ? owned_items : not_owned_items;
 
-        if (isGrouped) {
-          let sub = item.subcategory || "Other";
-          if (!target[category][sub]) target[category][sub] = [];
-          target[category][sub].push(item.name);
+    if (isGrouped) {
+      const sub = item.subcategory || "Other";
+      if (!target[category][sub]) target[category][sub] = [];
+      target[category][sub].push(item.name);
+    } else {
+      target[category].push(item.name);
+    }
+
+    if (owned) {
+      item_counter[category]["summary"]["owned"]++;
+    } else {
+      item_counter[category]["summary"]["not-owned"]++;
+    }
+    item_counter[category]["summary"]["total"]++;
+  });
+}
+
+function processInventoryItems(id_list, owned_items, not_owned_items) {
+  id_list.forEach((id) => {
+    for (const [category, config] of Object.entries(inventoryCategories)) {
+      const categoryData = all_items[category];
+      if (categoryData && id in categoryData) {
+        const item = categoryData[id];
+        if (config.nested) {
+          const sub = item[config.subcatKey];
+          owned_items[category][sub].push(item.name);
+          item_counter[category][sub]["owned"]++;
+          item_counter[category][sub]["total"]++;
         } else {
-          target[category].push(item.name);
+          owned_items[category].push(item.name);
         }
-
-        if (owned) {
-          item_counter[category]["summary"]["owned"]++;
-        } else {
-          item_counter[category]["summary"]["not-owned"]++;
-        }
+        item_counter[category]["summary"]["owned"]++;
         item_counter[category]["summary"]["total"]++;
-      });
-
-    };
-
-    processFlags("bosses");
-    processFlags("graces", true);
-    processFlags("cookbooks");
-    processFlags("bell_bearings");
-    processFlags("whetblades");
-
-    id_list.forEach((id) => {
-      if (id in all_items["armament"]) {
-        owned_items["armament"][all_items["armament"][id]["class"]].push(all_items["armament"][id]["name"]);
-        item_counter["armament"][all_items["armament"][id]["class"]]["owned"]++;
-        item_counter["armament"][all_items["armament"][id]["class"]]["total"]++;
-        item_counter["armament"]["summary"]["owned"]++;
-        item_counter["armament"]["summary"]["total"]++;
-        delete all_items["armament"][id];
-      } else if (id in all_items["armor"]) {
-        owned_items["armor"][all_items["armor"][id]["category"]].push(all_items["armor"][id]["name"]);
-        item_counter["armor"][all_items["armor"][id]["category"]]["owned"]++;
-        item_counter["armor"][all_items["armor"][id]["category"]]["total"]++;
-        item_counter["armor"]["summary"]["owned"]++;
-        item_counter["armor"]["summary"]["total"]++;
-        delete all_items["armor"][id];
-      } else if (id in all_items["ashesOfWar"]) {
-        owned_items["ashesOfWar"][all_items["ashesOfWar"][id]["category"]].push(all_items["ashesOfWar"][id]["name"]);
-        item_counter["ashesOfWar"][all_items["ashesOfWar"][id]["category"]]["owned"]++;
-        item_counter["ashesOfWar"][all_items["ashesOfWar"][id]["category"]]["total"]++;
-        item_counter["ashesOfWar"]["summary"]["owned"]++;
-        item_counter["ashesOfWar"]["summary"]["total"]++;
-        delete all_items["ashesOfWar"][id];
-      } else if (id in all_items["magic"]) {
-        owned_items["magic"][all_items["magic"][id]["category"]].push(all_items["magic"][id]["name"]);
-        item_counter["magic"][all_items["magic"][id]["category"]]["owned"]++;
-        item_counter["magic"][all_items["magic"][id]["category"]]["total"]++;
-        item_counter["magic"]["summary"]["owned"]++;
-        item_counter["magic"]["summary"]["total"]++;
-        delete all_items["magic"][id];
-      } else if (id in all_items["spiritAshes"]) {
-        owned_items["spiritAshes"].push(all_items["spiritAshes"][id]["name"]);
-        item_counter["spiritAshes"]["summary"]["owned"]++;
-        item_counter["spiritAshes"]["summary"]["total"]++;
-        delete all_items["spiritAshes"][id];
-      } else if (id in all_items["talisman"]) {
-        owned_items["talisman"].push(all_items["talisman"][id]["name"]);
-        item_counter["talisman"]["summary"]["owned"]++;
-        item_counter["talisman"]["summary"]["total"]++;
-        delete all_items["talisman"][id];
-      } else if (id in all_items["tools"]) {
-        owned_items["tools"].push(all_items["tools"][id]["name"]);
-        item_counter["tools"]["summary"]["owned"]++;
-        item_counter["tools"]["summary"]["total"]++;
-        delete all_items["tools"][id];
-      } else if (id in all_items["gestures"]) {
-        owned_items["gestures"].push(all_items["gestures"][id]["name"]);
-        item_counter["gestures"]["summary"]["owned"]++;
-        item_counter["gestures"]["summary"]["total"]++;
-        delete all_items["gestures"][id];
-      } else if (id in all_items["crystal_tears"]) {
-        owned_items["crystal_tears"].push(all_items["crystal_tears"][id]["name"]);
-        item_counter["crystal_tears"]["summary"]["owned"]++;
-        item_counter["crystal_tears"]["summary"]["total"]++;
-        delete all_items["crystal_tears"][id];
-      }
-    });
-
-    for (let item_type in all_items) {
-      for (let id in all_items[item_type]) {
-        if (item_type === "armament") {
-          not_owned_items["armament"][all_items["armament"][id]["class"]].push(all_items["armament"][id]["name"]);
-          item_counter[item_type][all_items[item_type][id]["class"]]["not-owned"]++;
-          item_counter[item_type][all_items[item_type][id]["class"]]["total"]++;
-          item_counter[item_type]["summary"]["not-owned"]++;
-          item_counter[item_type]["summary"]["total"]++;
-        } else if (item_type === "armor" || item_type === "ashesOfWar" || item_type === "magic") {
-          not_owned_items[item_type][all_items[item_type][id]["category"]].push(all_items[item_type][id]["name"]);
-          item_counter[item_type][all_items[item_type][id]["category"]]["not-owned"]++;
-          item_counter[item_type][all_items[item_type][id]["category"]]["total"]++;
-          item_counter[item_type]["summary"]["not-owned"]++;
-          item_counter[item_type]["summary"]["total"]++;
-        } else if (item_type === "spiritAshes" || item_type === "talisman" || item_type === "tools" || item_type === "gestures" || item_type === "crystal_tears") {
-          not_owned_items[item_type].push(all_items[item_type][id]["name"]);
-          item_counter[item_type]["summary"]["not-owned"]++;
-          item_counter[item_type]["summary"]["total"]++;
-        }
+        delete categoryData[id];
+        break; // Found the category, move to next id
       }
     }
+  });
+
+  for (const [category, config] of Object.entries(inventoryCategories)) {
+    const categoryData = all_items[category];
+    if (!categoryData) continue;
+    for (const id in categoryData) {
+      const item = categoryData[id];
+      if (config.nested) {
+        const sub = item[config.subcatKey];
+        not_owned_items[category][sub].push(item.name);
+        item_counter[category][sub]["not-owned"]++;
+        item_counter[category][sub]["total"]++;
+      } else {
+        not_owned_items[category].push(item.name);
+      }
+      item_counter[category]["summary"]["not-owned"]++;
+      item_counter[category]["summary"]["total"]++;
+    }
+  }
+}
+
+function getOwnedAndNot(file_read, selected_slot) {
+  try {
+    const { event_flags, id_list } = parseSlotData(file_read, selected_slot);
+
+    const owned_items = JSON.parse(JSON.stringify(item_dict_template));
+    const not_owned_items = JSON.parse(JSON.stringify(item_dict_template));
+
+    // Process event-flag based categories
+    processFlags("bosses", event_flags, owned_items, not_owned_items);
+    processFlags("graces", event_flags, owned_items, not_owned_items, true);
+    processFlags("cookbooks", event_flags, owned_items, not_owned_items);
+    processFlags("bell_bearings", event_flags, owned_items, not_owned_items);
+    processFlags("whetblades", event_flags, owned_items, not_owned_items);
+
+    // Process inventory-based categories
+    processInventoryItems(id_list, owned_items, not_owned_items);
+
     return { worked: true, owned: owned_items, "not-owned": not_owned_items, counter: item_counter };
   } catch (err) {
-    console.log(err);
-    console.log("insert a valid file");
+    console.error(err);
     return { worked: false, owned: null, "not-owned": null, counter: null };
   }
 }
