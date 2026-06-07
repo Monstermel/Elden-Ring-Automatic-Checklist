@@ -568,39 +568,40 @@ function getCard(itemName, categoryName = "") {
 }
 
 function getCategorySection(category, owned) {
-  let category_container;
-  if (owned === "owned") {
-    category_container = document.getElementById(`owned-${category}`);
-  } else if (owned === "not-owned") {
-    category_container = document.getElementById(`not-owned-${category}`);
-  }
-  if (category_container.innerHTML === "") {
-    let i = 0;
-    if (!Array.isArray(result[owned][category])) {
-      for (let type in result[owned][category]) {
-        let counterStr = "";
-        if (item_counter[category] && item_counter[category][type]) {
-          counterStr = `<span style="float: right">${item_counter[category][type][owned]}/${item_counter[category][type]["total"]}</span>`;
-        }
-        category_container.innerHTML += `<h4>${type}${counterStr}</h4>`;
+  const containerId = owned === "owned" ? `owned-${category}` : `not-owned-${category}`;
+  const category_container = document.getElementById(containerId);
+  const categoryData = result?.[owned]?.[category];
 
-        category_container.innerHTML += `<div class="row-flex">`;
-        let category_row = category_container.getElementsByClassName(`row-flex`)[i];
-        let items = [...result[owned][category][type]].sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
-        for (let item of items) {
-          category_row.innerHTML += getCard(item, category);
-        }
-        i++;
-      }
-    } else {
-      category_container.innerHTML += `<div class="row-flex">`;
-      let category_row = category_container.getElementsByClassName(`row-flex`)[0];
-      let items = [...result[owned][category]].sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
-      for (let item of items) {
-        category_row.innerHTML += getCard(item, category);
-      }
-    }
+  if (!category_container || !categoryData || category_container.innerHTML !== "") {
+    return;
   }
+
+  const sortItems = (items) => {
+    return [...items].sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
+  };
+
+  const renderRow = (items) => {
+    const row = document.createElement("div");
+    row.className = "row-flex";
+    sortItems(items).forEach((item) => {
+      row.innerHTML += getCard(item, category);
+    });
+    category_container.appendChild(row);
+  };
+
+  if (!Array.isArray(categoryData)) {
+    Object.entries(categoryData).forEach(([type, items]) => {
+      let counterStr = "";
+      if (item_counter?.[category]?.[type]) {
+        counterStr = `<span style="float: right">${item_counter[category][type][owned]}/${item_counter[category][type]["total"]}</span>`;
+      }
+      category_container.insertAdjacentHTML("beforeend", `<h4>${type}${counterStr}</h4>`);
+      renderRow(items);
+    });
+  } else {
+    renderRow(categoryData);
+  }
+
   $(function () {
     $("img.lazy").Lazy({
       // your configuration goes here
