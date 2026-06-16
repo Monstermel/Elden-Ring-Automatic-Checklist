@@ -480,8 +480,12 @@ function normalizeWikiName(itemName, stripUpgrade = true) {
   let normalized = itemName;
   if (stripUpgrade) {
     normalized = normalized.replace(/ \+\d+$/, ""); // Remove "+10", "+25", etc.
+  } else {
+    normalized = normalized.replace(/ \+/g, "+"); // Remove space before "+" (e.g. " +3" -> "+3")
   }
-  return normalized.replace(/\[(\d+)\]/g, "($1)").replace(/ /g, "+");
+  normalized = normalized.replace(/\[(\d+)\]/g, "($1)");
+  normalized = normalized.replace(/ /g, "+");
+  return normalized;
 }
 
 function getCardMetadata(itemName, categoryName) {
