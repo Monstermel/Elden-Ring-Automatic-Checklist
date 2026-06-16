@@ -55,6 +55,11 @@ I planned to add some features:
 
 - Make a section in which armors are divided according to their [armor set](https://eldenring.wiki.fextralife.com/Armor)
 
+Know issues:
+
+- Altered armor tracking don't work as expected 
+- Some non persistent cookbooks are not tracked correctly
+
 If you would like to support me this is the button :heart:
 
 [<img src="https://raw.githubusercontent.com/aha999/DonateButtons/master/Paypal.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" height="100" />](https://www.paypal.com/donate/?hosted_button_id=KXL9LBPK466G6)
